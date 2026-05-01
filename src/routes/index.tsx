@@ -4,6 +4,7 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Marquee } from "@/components/site/Marquee";
 import { Services } from "@/components/site/Services";
+import { HighlightedProjects } from "@/components/site/HighlightedProjects";
 import { Stats } from "@/components/site/Stats";
 import { Testimonial } from "@/components/site/Testimonial";
 import { Footer } from "@/components/site/Footer";
