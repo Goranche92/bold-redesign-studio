@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-gradient.jpg";
+import { fadeUp, fadeUpSm, fadeRight, scaleIn, stagger, scrollViewportLoose } from "./motion-presets";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-6 pt-32 pb-20">
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={scrollViewportLoose}
+      variants={stagger(0.15)}
+      className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-6 pt-32 pb-20"
+    >
       {/* Gradient backdrop */}
       <div className="absolute inset-0 -z-10">
         <img src={heroBg} alt="" className="w-full h-full object-cover opacity-90" />
@@ -16,9 +23,7 @@ export function Hero() {
 
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          variants={fadeUp}
           className="font-display uppercase font-black leading-[0.85] text-foreground"
           style={{ fontSize: "clamp(4rem, 14vw, 14rem)" }}
         >
@@ -30,33 +35,18 @@ export function Hero() {
         </motion.h1>
 
         <div className="mt-16 grid md:grid-cols-3 gap-10 items-end">
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-foreground/80 text-lg max-w-md"
-          >
+          <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md">
             We transform ideas into fully realised design experiences — from UI/UX and illustration to development — creating work that elevates brands.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex justify-center"
-          >
+          <motion.div variants={scaleIn} className="flex justify-center">
             <a href="#contact" className="flex items-center gap-3 bg-foreground text-primary-foreground pl-8 pr-2 py-2 rounded-full text-base font-medium hover:scale-105 transition-transform">
               LET'S TALK
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white">✕</span>
             </a>
           </motion.div>
 
-          <motion.ul
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="space-y-3 md:text-right text-foreground/90"
-          >
+          <motion.ul variants={fadeRight} className="space-y-3 md:text-right text-foreground/90">
             {["Facebook", "Linkedin", "Instagram"].map((s) => (
               <li key={s}>
                 <a href="#" className="inline-flex items-center gap-2 hover:text-foreground/60 transition">
@@ -67,7 +57,7 @@ export function Hero() {
           </motion.ul>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
