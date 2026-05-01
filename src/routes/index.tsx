@@ -29,6 +29,7 @@ function Index() {
       <About />
       <Marquee />
       <Services />
+      <HighlightedProjects />
       <Stats />
       <Testimonial />
       <Footer />
