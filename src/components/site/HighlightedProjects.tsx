@@ -1,5 +1,11 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
@@ -26,6 +32,17 @@ const projects = [
   },
 ];
 
+/** 0 = fully front, 1 = fully stacked behind next cards */
+function stackedAmount(progress: number, index: number, total: number): number {
+  if (index >= total - 1) return 0;
+  const handoff = (index + 1) / total;
+  const blend = 0.07;
+  if (progress <= handoff - blend) return 0;
+  if (progress >= handoff + blend) return 1;
+  const t = (progress - (handoff - blend)) / (2 * blend);
+  return Math.min(1, Math.max(0, t));
+}
+
 export function HighlightedProjects() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -38,9 +55,9 @@ export function HighlightedProjects() {
       <motion.div
         initial="hidden"
         whileInView="show"
-        viewport={scrollViewport}
+        viewport={{ ...scrollViewport, once: true }}
         variants={stagger(0.12)}
-        className="text-center mb-20"
+        className="text-center mb-16 md:mb-24"
       >
         <motion.p
           variants={fadeUp}
@@ -58,7 +75,11 @@ export function HighlightedProjects() {
         </motion.h2>
       </motion.div>
 
-      <div ref={containerRef} className="relative">
+      <div
+        ref={containerRef}
+        className="relative [perspective:1400px]"
+        style={{ paddingBottom: "min(40vh, 420px)" }}
+      >
         {projects.map((p, i) => (
           <ProjectCard
             key={p.title}
@@ -86,28 +107,52 @@ function ProjectCard({
   total: number;
   progress: MotionValue<number>;
 }) {
-  // Each card occupies a slice of the scroll progress.
-  const slice = 1 / total;
-  const start = index * slice;
-  const end = start + slice;
+  const reduce = useReducedMotion();
 
-  // Cards behind the active one scale down + fade slightly so they "stack".
+  const stack = useTransform(progress, (v) =>
+    reduce ? 0 : stackedAmount(v, index, total)
+  );
+
+  const scale = useTransform(stack, [0, 1], [1, 0.9]);
+  const opacity = useTransform(stack, [0, 1], [1, 0.62]);
+  const rotateX = useTransform(stack, [0, 1], [0, -4]);
+  const y = useTransform(stack, [0, 1], [0, -6]);
+  const rimOpacity = useTransform(stack, [0, 1], [0, 0.35]);
+  const imgScale = useTransform(stack, [0, 1], [1, 1.03]);
+
   const isLast = index === total - 1;
-  const scale = useTransform(progress, [start, end], [1, isLast ? 1 : 0.94]);
 
   return (
     <div
-      className="sticky"
+      className="sticky flex justify-center"
       style={{
-        top: `calc(8rem + ${index * 24}px)`,
-        marginBottom: index === total - 1 ? 0 : "12vh",
+        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 5rem) + ${index * 28}px)`,
+        marginBottom: isLast ? "min(45vh, 520px)" : "min(72vh, 760px)",
+        zIndex: 10 + index,
       }}
     >
       <motion.article
-        style={{ scale }}
-        className="relative grid md:grid-cols-12 gap-8 items-stretch rounded-[2rem] border border-white/10 bg-card p-6 md:p-10 overflow-hidden shadow-2xl"
+        style={{
+          scale: reduce ? 1 : scale,
+          opacity: reduce ? 1 : opacity,
+          rotateX: reduce ? 0 : rotateX,
+          y: reduce ? 0 : y,
+          transformStyle: "preserve-3d",
+          width: "100%",
+          maxWidth: "1400px",
+        }}
+        className="relative grid md:grid-cols-12 gap-8 items-stretch rounded-[2rem] border border-white/10 bg-card p-6 md:p-10 overflow-hidden shadow-2xl ring-1 ring-white/[0.06] origin-center will-change-transform"
       >
-        <div className="md:col-span-5 flex flex-col justify-between gap-10">
+        <motion.div
+          className="pointer-events-none absolute inset-0 rounded-[2rem]"
+          style={{
+            opacity: reduce ? 0 : rimOpacity,
+            boxShadow: "inset 0 0 60px rgba(0,0,0,0.35)",
+          }}
+          aria-hidden
+        />
+
+        <div className="relative md:col-span-5 flex flex-col justify-between gap-10 z-[1]">
           <div className="space-y-6">
             <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/15 text-xs uppercase tracking-widest text-foreground/80">
               {project.tag}
@@ -136,13 +181,14 @@ function ProjectCard({
           </div>
         </div>
 
-        <div className="md:col-span-7">
+        <div className="relative md:col-span-7 z-[1]">
           <div className="group h-full overflow-hidden rounded-2xl">
-            <img
+            <motion.img
               src={project.img}
               alt={project.title}
               loading="lazy"
-              className="w-full h-full min-h-[320px] md:min-h-[460px] object-cover group-hover:scale-105 transition duration-700"
+              className="w-full h-full min-h-[320px] md:min-h-[460px] object-cover"
+              style={{ scale: reduce ? 1 : imgScale }}
             />
           </div>
         </div>
