@@ -26,25 +26,10 @@ export function OurWorks() {
       ref={containerRef}
       className="relative px-6"
       aria-label="Our Works"
-      style={{ height: `${works.length * 100}vh` }}
+      style={{ height: `${(works.length + 1) * 90}vh` }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={scrollViewport}
-          variants={stagger(0.1)}
-          className="pt-24 pb-6 text-center"
-        >
-          <motion.p
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/70"
-          >
-            <span className="w-2 h-2 rounded-full bg-magenta" />
-            Our Works
-          </motion.p>
-        </motion.div>
-
+        {/* Background headline (sticky, stays put) */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
           <h2
             className="font-display uppercase font-black text-foreground/[0.06] whitespace-nowrap select-none"
@@ -54,7 +39,23 @@ export function OurWorks() {
           </h2>
         </div>
 
-        <div className="relative flex-1 w-full max-w-[1000px] mx-auto px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={scrollViewport}
+          variants={stagger(0.1)}
+          className="pt-16 pb-4 text-center relative z-10"
+        >
+          <motion.p
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/80"
+          >
+            <span className="w-2 h-2 rounded-full bg-magenta" />
+            Our Works
+          </motion.p>
+        </motion.div>
+
+        <div className="relative flex-1 w-full max-w-[1400px] mx-auto">
           {works.map((w, i) => (
             <WorkCard
               key={w.n}
@@ -83,34 +84,60 @@ function WorkCard({
   total: number;
   progress: MotionValue<number>;
 }) {
-  const slice = 1 / total;
-  const start = index * slice;
-  const end = (index + 1) * slice;
+  // Total scroll has (total+1) zones. Each card uses zones [i, i+2] to
+  // enter, settle, and exit upward.
+  const zone = 1 / (total + 1);
+  const enterStart = index * zone;
+  const settleAt = (index + 0.6) * zone;
+  const exitStart = (index + 1.2) * zone;
+  const exitEnd = (index + 2) * zone;
 
-  const y = useTransform(progress, [start, end], ["100%", "0%"]);
-  const scale = useTransform(progress, [start, end], [0.8, 1]);
-  const opacity = useTransform(progress, [start, end], [0, 1]);
+  const isFirst = index === 0;
+
+  const y = useTransform(
+    progress,
+    [enterStart, settleAt, exitStart, exitEnd],
+    [isFirst ? 0 : 100, 0, 0, -110],
+  );
+  const opacity = useTransform(
+    progress,
+    [enterStart, settleAt, exitStart, exitEnd],
+    [isFirst ? 1 : 0, 1, 1, 0],
+  );
+  const scale = useTransform(
+    progress,
+    [enterStart, settleAt, exitStart, exitEnd],
+    [0.92, 1, 1, 0.96],
+  );
+
+  // Alternate sides like the reference (left/right offset)
+  const isLeft = index % 2 === 0;
 
   return (
     <motion.article
-      style={{ 
-        y, 
-        scale, 
-        opacity, 
-        position: "absolute", 
-        top: "10vh", 
-        left: 0, 
-        right: 0 
-      }}
-      className="bg-card border border-white/10 rounded-3xl p-8 flex items-center gap-8 shadow-2xl"
+      style={{ y: y as unknown as number, opacity, scale }}
+      className={`absolute top-[6vh] w-[88%] sm:w-[64%] md:w-[46%] lg:w-[42%] aspect-[5/4] rounded-3xl overflow-hidden bg-card border border-white/10 shadow-2xl ${
+        isLeft ? "left-0 md:left-[2%]" : "right-0 md:right-[2%]"
+      }`}
     >
-      <div className="w-1/3 aspect-video overflow-hidden rounded-xl">
-        <img src={work.img} alt={work.title} className="w-full h-full object-cover" />
-      </div>
-      <div className="flex-1">
-        <span className="text-magenta text-sm font-bold">{work.n}</span>
-        <h3 className="text-4xl font-display uppercase mt-2">{work.title}</h3>
-        <p className="text-foreground/60 mt-2">{work.tag} • {work.year}</p>
+      <img
+        src={work.img}
+        alt={work.title}
+        loading="lazy"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+      <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
+        <div className="flex items-center justify-between text-xs uppercase tracking-widest text-foreground/80">
+          <span>{work.n} — {work.tag}</span>
+          <span>{work.year}</span>
+        </div>
+        <h3
+          className="font-display uppercase leading-[0.9] text-foreground"
+          style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
+        >
+          {work.title}
+        </h3>
       </div>
     </motion.article>
   );
