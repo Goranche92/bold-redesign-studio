@@ -93,8 +93,7 @@ function ProjectCard({
 
   // Cards behind the active one scale down + fade slightly so they "stack".
   const isLast = index === total - 1;
-  const scale = useTransform(progress, [start, end], [1, isLast ? 1 : 0.92]);
-  const opacity = useTransform(progress, [start, end], [1, isLast ? 1 : 0.6]);
+  const scale = useTransform(progress, [start, end], [1, isLast ? 1 : 0.94]);
 
   return (
     <div
@@ -105,7 +104,7 @@ function ProjectCard({
       }}
     >
       <motion.article
-        style={{ scale, opacity }}
+        style={{ scale }}
         className="relative grid md:grid-cols-12 gap-8 items-stretch rounded-[2rem] border border-white/10 bg-card p-6 md:p-10 overflow-hidden shadow-2xl"
       >
         <div className="md:col-span-5 flex flex-col justify-between gap-10">
