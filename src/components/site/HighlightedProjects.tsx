@@ -1,21 +1,22 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
-import { fadeUp, scaleIn, scrollViewport, scrollViewportLoose, stagger } from "./motion-presets";
+import { fadeUp, scrollViewport, stagger } from "./motion-presets";
 
 const projects = [
   {
     tag: "Branding",
-    title: "Finaco — Fintech Identity System",
-    desc: "A confident financial brand built around clarity, motion, and trust — from logo system to product UI.",
-    img: work1,
+    title: "Finaco — Mental Well-Being Website",
+    desc: "A calm, human-centered digital experience designed to support emotional well-being through clarity, balance, and thoughtful interaction.",
+    img: work2,
   },
   {
     tag: "UI / UX Design",
-    title: "Vudo — Mental Well-Being Platform",
-    desc: "A calm, human-centered digital experience designed to support emotional well-being through balance and thoughtful interaction.",
-    img: work2,
+    title: "Vudo — Fintech Identity System",
+    desc: "A confident financial brand built around clarity, motion, and trust — from logo system to product UI.",
+    img: work1,
   },
   {
     tag: "Development",
@@ -26,73 +27,127 @@ const projects = [
 ];
 
 export function HighlightedProjects() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
   return (
-    <section className="relative px-6 py-32 max-w-[1400px] mx-auto">
+    <section className="relative px-6 pt-32 pb-10 max-w-[1400px] mx-auto">
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={scrollViewport}
         variants={stagger(0.12)}
+        className="text-center mb-20"
       >
-        <motion.p variants={fadeUp} className="text-sm uppercase tracking-widest text-foreground/60 mb-6">
-          — Selected Work
+        <motion.p
+          variants={fadeUp}
+          className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/70 mb-8"
+        >
+          <span className="w-2 h-2 rounded-full bg-magenta" />
+          Selected Work
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="font-display uppercase font-black leading-[0.9] text-foreground max-w-5xl"
-          style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+          className="font-display uppercase font-black leading-[0.9] text-foreground"
+          style={{ fontSize: "clamp(3rem, 9vw, 9rem)" }}
         >
           Highlighted <span className="text-gradient">Projects</span>
         </motion.h2>
       </motion.div>
 
-      <div className="mt-20 space-y-32">
+      <div ref={containerRef} className="relative">
         {projects.map((p, i) => (
-          <motion.article
+          <ProjectCard
             key={p.title}
-            initial="hidden"
-            whileInView="show"
-            viewport={scrollViewportLoose}
-            variants={stagger(0.15)}
-            className={`grid md:grid-cols-12 gap-10 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
-          >
-            <motion.div variants={scaleIn} className="md:col-span-7">
-              <div className="group overflow-hidden rounded-3xl glow">
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  loading="lazy"
-                  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition duration-700"
-                />
-              </div>
-            </motion.div>
-
-            <div className="md:col-span-5 space-y-6">
-              <motion.p variants={fadeUp} className="text-sm uppercase tracking-widest text-foreground/60">
-                {p.tag}
-              </motion.p>
-              <motion.h3
-                variants={fadeUp}
-                className="font-display uppercase leading-[0.95] text-foreground"
-                style={{ fontSize: "clamp(1.75rem, 3vw, 3rem)" }}
-              >
-                {p.title}
-              </motion.h3>
-              <motion.p variants={fadeUp} className="text-foreground/70 text-lg max-w-md">
-                {p.desc}
-              </motion.p>
-              <motion.a
-                variants={fadeUp}
-                href="#"
-                className="inline-flex items-center gap-3 text-foreground hover:text-accent transition"
-              >
-                <span className="font-medium">View Project</span>
-                <span className="inline-flex w-10 h-10 items-center justify-center rounded-full border border-white/20">↗</span>
-              </motion.a>
-            </div>
-          </motion.article>
+            project={p}
+            index={i}
+            total={projects.length}
+            progress={scrollYProgress}
+          />
         ))}
       </div>
     </section>
+  );
+}
+
+type Project = (typeof projects)[number];
+
+function ProjectCard({
+  project,
+  index,
+  total,
+  progress,
+}: {
+  project: Project;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+}) {
+  // Each card occupies a slice of the scroll progress.
+  const slice = 1 / total;
+  const start = index * slice;
+  const end = start + slice;
+
+  // Cards behind the active one scale down + fade slightly so they "stack".
+  const isLast = index === total - 1;
+  const scale = useTransform(progress, [start, end], [1, isLast ? 1 : 0.92]);
+  const opacity = useTransform(progress, [start, end], [1, isLast ? 1 : 0.6]);
+
+  return (
+    <div
+      className="sticky"
+      style={{
+        top: `calc(8rem + ${index * 24}px)`,
+        marginBottom: index === total - 1 ? 0 : "12vh",
+      }}
+    >
+      <motion.article
+        style={{ scale, opacity }}
+        className="relative grid md:grid-cols-12 gap-8 items-stretch rounded-[2rem] border border-white/10 bg-card/80 backdrop-blur-sm p-6 md:p-10 overflow-hidden glow"
+      >
+        <div className="md:col-span-5 flex flex-col justify-between gap-10">
+          <div className="space-y-6">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/15 text-xs uppercase tracking-widest text-foreground/80">
+              {project.tag}
+            </span>
+            <h3
+              className="font-display uppercase leading-[0.95] text-foreground"
+              style={{ fontSize: "clamp(1.75rem, 2.6vw, 2.75rem)" }}
+            >
+              {project.title}
+            </h3>
+          </div>
+
+          <div className="space-y-8">
+            <p className="text-foreground/70 text-base md:text-lg max-w-md">
+              {project.desc}
+            </p>
+            <a
+              href="#"
+              className="group inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full bg-foreground text-background font-medium uppercase tracking-widest text-sm w-fit hover:bg-foreground/90 transition"
+            >
+              View Project
+              <span className="inline-flex w-9 h-9 items-center justify-center rounded-full bg-background text-foreground transition group-hover:rotate-45">
+                ↗
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div className="md:col-span-7">
+          <div className="group h-full overflow-hidden rounded-2xl">
+            <img
+              src={project.img}
+              alt={project.title}
+              loading="lazy"
+              className="w-full h-full min-h-[320px] md:min-h-[460px] object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+        </div>
+      </motion.article>
+    </div>
   );
 }
