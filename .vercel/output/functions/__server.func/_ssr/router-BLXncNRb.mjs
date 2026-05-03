@@ -13,7 +13,7 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-CIwcg57m.css";
+const appCss = "/assets/styles-Cjj5LIqF.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -49,7 +49,7 @@ const Route$1 = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=Boldonse&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700&display=swap"
       }
     ]
   }),
@@ -69,7 +69,7 @@ function RootShell({ children }) {
 function RootComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
 }
-const $$splitComponentImporter = () => import("./index-CXyc9qkX.mjs");
+const $$splitComponentImporter = () => import("./index-B-SVemel.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{

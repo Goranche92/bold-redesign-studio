@@ -17,8 +17,7 @@ export function About() {
       <div className="grid md:grid-cols-12 gap-12 md:gap-x-16 md:gap-y-20 items-end">
         <motion.h2
           variants={fadeUp}
-          className="md:col-span-8 font-display uppercase font-black leading-[1.02] tracking-tight text-foreground [text-wrap:balance]"
-          style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)" }}
+          className="md:col-span-8 font-display uppercase font-black leading-[1.08] tracking-tight text-foreground [text-wrap:balance]"
         >
           Design &amp; code that <span className="text-gradient">mean</span> something
         </motion.h2>

@@ -61,7 +61,7 @@ export function HighlightedProjects() {
         whileInView="show"
         viewport={{ ...scrollViewport, once: true }}
         variants={stagger(0.12)}
-        className="text-center mb-20 md:mb-28"
+        className="text-center"
       >
         <motion.p
           variants={fadeUp}
@@ -72,8 +72,7 @@ export function HighlightedProjects() {
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="font-display uppercase font-black leading-[0.9] text-foreground"
-          style={{ fontSize: "clamp(3rem, 9vw, 9rem)" }}
+          className="font-display uppercase font-black leading-[1.08] text-foreground"
         >
           Highlighted <span className="text-gradient">Projects</span>
         </motion.h2>

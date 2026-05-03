@@ -24,14 +24,13 @@ export function Hero() {
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.h1
           variants={fadeUp}
-          className="font-display uppercase font-black leading-[0.85] text-foreground flex flex-col gap-5 md:gap-8"
-          style={{ fontSize: "clamp(4rem, 14vw, 14rem)" }}
+          className="font-display uppercase font-black flex flex-col gap-[100px] tracking-[2.1px] max-md:gap-12 max-md:text-[clamp(2.75rem,11vw,4.25rem)] max-md:leading-[1.08] md:text-[104px] md:leading-[208px]"
         >
-          <span className="flex items-center gap-6 flex-wrap">
+          <span className="flex items-center gap-6 flex-wrap text-white">
             Creative
             <SeeProjectsBadge />
           </span>
-          <span className="block text-gradient pt-1 md:pt-2">Developer</span>
+          <span className="block text-gradient">Developer</span>
         </motion.h1>
 
         <div className="mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end">

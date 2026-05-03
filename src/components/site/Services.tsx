@@ -25,8 +25,7 @@ export function Services() {
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="font-display uppercase font-black leading-[0.9] text-foreground max-w-5xl"
-          style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+          className="font-display uppercase font-black leading-[1.08] text-foreground max-w-5xl"
         >
           Creative solutions <span className="text-gradient">end to end</span>
         </motion.h2>

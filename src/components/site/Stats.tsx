@@ -21,8 +21,7 @@ export function Stats() {
       </motion.p>
       <motion.h2
         variants={fadeUp}
-        className="font-display uppercase font-black leading-[0.9] text-foreground max-w-5xl"
-        style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+        className="font-display uppercase font-black leading-[1.08] text-foreground max-w-5xl"
       >
         Creativity with <span className="text-gradient">real-world</span> results
       </motion.h2>
@@ -30,7 +29,7 @@ export function Stats() {
       <div className="mt-16 md:mt-24 grid md:grid-cols-3 gap-10 md:gap-12">
         {stats.map((s, i) => (
           <motion.div key={i} variants={fadeUp} className="glass rounded-3xl p-8 md:p-10">
-            <div className="font-display text-7xl md:text-8xl text-gradient">{s.value}</div>
+            <div className="font-sans font-bold text-7xl md:text-8xl text-gradient tabular-nums">{s.value}</div>
             <p className="mt-8 text-foreground/70 leading-relaxed">{s.label}</p>
           </motion.div>
         ))}

@@ -30,7 +30,7 @@ function Navbar() {
           Link,
           {
             to: "/",
-            className: "flex items-center gap-2 md:gap-3 text-foreground font-display text-lg sm:text-xl md:text-2xl tracking-tight",
+            className: "flex items-center gap-2 md:gap-3 text-foreground font-sans font-semibold text-lg sm:text-xl md:text-2xl tracking-tight",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-6 h-6 md:w-7 md:h-7 shrink-0 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)]" }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "leading-none", children: [
@@ -109,14 +109,13 @@ function Hero() {
             motion.h1,
             {
               variants: fadeUp,
-              className: "font-display uppercase font-black leading-[0.85] text-foreground flex flex-col gap-5 md:gap-8",
-              style: { fontSize: "clamp(4rem, 14vw, 14rem)" },
+              className: "font-display uppercase font-black flex flex-col gap-[100px] tracking-[2.1px] max-md:gap-12 max-md:text-[clamp(2.75rem,11vw,4.25rem)] max-md:leading-[1.08] md:text-[104px] md:leading-[208px]",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-6 flex-wrap", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-6 flex-wrap text-white", children: [
                   "Creative",
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SeeProjectsBadge, {})
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-gradient pt-1 md:pt-2", children: "Developer" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-gradient", children: "Developer" })
               ]
             }
           ),
@@ -187,7 +186,7 @@ function About() {
 function Marquee() {
   const items = ["BRANDING", "UI / UX", "DEVELOPMENT", "ILLUSTRATION", "MOTION", "STRATEGY"];
   const row = [...items, ...items, ...items];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-white/10 py-12 md:py-14 my-4 md:my-6 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex animate-marquee whitespace-nowrap gap-12", children: row.map((t, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-display uppercase text-5xl md:text-7xl text-foreground/90 flex items-center gap-12", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-white/10 py-12 md:py-14 my-4 md:my-6 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex animate-marquee whitespace-nowrap gap-12", children: row.map((t, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-sans uppercase font-semibold text-5xl md:text-7xl text-foreground/90 flex items-center gap-12", children: [
     t,
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent", children: "✦" })
   ] }, i)) }) });
@@ -557,7 +556,7 @@ function Stats() {
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-16 md:mt-24 grid md:grid-cols-3 gap-10 md:gap-12", children: stats.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { variants: fadeUp, className: "glass rounded-3xl p-8 md:p-10", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-7xl md:text-8xl text-gradient", children: s.value }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-sans font-bold text-7xl md:text-8xl text-gradient tabular-nums", children: s.value }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-8 text-foreground/70 leading-relaxed", children: s.label })
         ] }, i)) })
       ]
@@ -711,7 +710,7 @@ function Testimonial() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "div",
                         {
-                          className: "font-display uppercase font-black text-magenta leading-none",
+                          className: "font-sans uppercase font-bold text-magenta leading-none tracking-tight",
                           style: { fontSize: "clamp(1.75rem, 3vw, 3rem)" },
                           children: active.name
                         }

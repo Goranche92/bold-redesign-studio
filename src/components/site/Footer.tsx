@@ -44,10 +44,7 @@ export function Footer() {
 
         {/* Giant LET'S-TALK headline */}
         <div className="py-20 md:py-28 flex justify-center">
-          <h2
-            className="font-display uppercase font-black leading-[0.85] text-foreground text-center"
-            style={{ fontSize: "clamp(4rem, 18vw, 18rem)", letterSpacing: "-0.03em" }}
-          >
+          <h2 className="font-display uppercase font-black leading-[1.08] text-foreground text-center tracking-tight">
             LET'S–TALK
           </h2>
         </div>

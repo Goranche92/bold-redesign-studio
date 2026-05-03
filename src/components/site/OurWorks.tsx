@@ -85,10 +85,7 @@ export function OurWorks() {
           style={{ filter: titleFilter, opacity: titleOpacity }}
           className="pointer-events-none absolute left-0 right-0 top-[7.5rem] md:top-[8.5rem] z-40 px-4 text-center"
         >
-          <h2
-            className="font-display uppercase font-black leading-[0.95] text-foreground mx-auto max-w-5xl drop-shadow-[0_2px_28px_rgba(0,0,0,0.45)]"
-            style={{ fontSize: "clamp(1.65rem, 4.8vw, 3.75rem)" }}
-          >
+          <h2 className="font-display uppercase font-black leading-[1.08] text-foreground mx-auto max-w-5xl drop-shadow-[0_2px_28px_rgba(0,0,0,0.45)] [text-wrap:balance]">
             Design built to <span className="text-gradient">perform</span>
             <span className="block mt-3 md:mt-5 text-foreground/95">
               not just to look good

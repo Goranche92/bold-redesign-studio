@@ -11,7 +11,7 @@ export function Navbar() {
     >
       <Link
         to="/"
-        className="flex items-center gap-2 md:gap-3 text-foreground font-display text-lg sm:text-xl md:text-2xl tracking-tight"
+        className="flex items-center gap-2 md:gap-3 text-foreground font-sans font-semibold text-lg sm:text-xl md:text-2xl tracking-tight"
       >
         <span className="inline-block w-6 h-6 md:w-7 md:h-7 shrink-0 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)]" />
         <span className="leading-none">

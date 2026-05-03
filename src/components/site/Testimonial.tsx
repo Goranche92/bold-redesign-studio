@@ -147,7 +147,7 @@ export function Testimonial() {
                 transition={{ duration: 0.5 }}
               >
                 <div
-                  className="font-display uppercase font-black text-magenta leading-none"
+                  className="font-sans uppercase font-bold text-magenta leading-none tracking-tight"
                   style={{ fontSize: "clamp(1.75rem, 3vw, 3rem)" }}
                 >
                   {active.name}

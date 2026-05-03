@@ -64,8 +64,8 @@
   --violet: oklch(0.45 0.28 295);
   --electric: oklch(0.62 0.25 255);
 
-  --font-display: "Anton", "Arial Black", sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Boldonse", "Arial Black", sans-serif;
+  --font-sans: "Inter Tight", "Inter", system-ui, sans-serif;
 
   --gradient-hero: radial-gradient(circle at 15% 50%, oklch(0.55 0.32 340) 0%, transparent 45%),
                    radial-gradient(circle at 85% 30%, oklch(0.55 0.28 255) 0%, transparent 50%),
@@ -86,13 +86,33 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+
+  /* Glavni naslovi: Boldonse (ostali tekst nasleđuje Inter Tight sa body) */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  h2 {
+    font-size: 72px;
+    line-height: 1.08;
+    margin-top: 28px;
+    margin-bottom: 28px;
   }
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0;
+  }
   .bg-hero-gradient { background: var(--gradient-hero); }
   .text-gradient {
     background: linear-gradient(135deg, oklch(1 0 0), oklch(0.85 0.15 250));
