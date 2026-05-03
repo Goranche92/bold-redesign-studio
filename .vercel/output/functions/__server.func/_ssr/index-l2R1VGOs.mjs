@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { m as me } from "./router-K3mFnEbg.mjs";
+import { m as me } from "./router-BsucGFsu.mjs";
 import { C as ChevronDown, A as ArrowUpRight, a as ArrowLeft, b as ArrowRight, F as Facebook, I as Instagram, L as Linkedin } from "../_libs/lucide-react.mjs";
 import { u as useReducedMotion, m as motion } from "../_libs/framer-motion.mjs";
 import "../_libs/tanstack__react-router.mjs";
@@ -18,11 +18,45 @@ import "stream";
 import "../_libs/isbot.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
+function LandingAbout() {
+  const reduce = useReducedMotion();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "about", className: "flex w-full flex-col items-center px-6 py-[80px] md:px-12 xl:px-[344px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto flex w-full max-w-[1232px] flex-col items-center gap-[80px]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[16px] leading-[19.2px] uppercase", children: "About me" })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative mx-auto flex w-full max-w-[1006px] min-h-[560px] flex-col items-center justify-center overflow-visible px-6 pt-20 pb-[120px] text-center md:min-h-[720px] md:px-[92px] md:pt-28 md:pb-[140px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display flex flex-col items-center gap-8 text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.2] font-normal uppercase md:gap-12 md:text-[72px] md:leading-[1.08]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block pb-1", children: "Design that means" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block pt-1", children: "something" })
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.p,
+      {
+        className: "mx-auto max-w-[642px] text-center text-[16px] leading-6 text-white",
+        initial: reduce ? false : { opacity: 0, y: 12 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.3 },
+        transition: { duration: 0.5 },
+        children: "I'm a developer who enjoys the craft of interfaces and product details. I blend layout, interaction, and implementation so what ships is easy to use, easy to read in the codebase, and aligned with what the team is trying to achieve."
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "a",
+      {
+        href: "#about",
+        className: "relative inline-flex items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-6 py-4 text-[16px] leading-[19.2px] uppercase text-[#04070a] shadow-pill-inset",
+        children: [
+          "More about me",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-6 shrink-0", strokeWidth: 1.75, "aria-hidden": true })
+        ]
+      }
+    ) })
+  ] }) });
+}
 const figma = {
   heroBgA: "https://www.figma.com/api/mcp/asset/e965eb2d-179c-423e-aa04-a83d7e497f53",
   heroBgB: "https://www.figma.com/api/mcp/asset/636af594-4930-4e55-863b-111119543663",
   seeProjectsBadge: "https://www.figma.com/api/mcp/asset/16ffe5cb-6dfd-4318-be4d-3b127ad14e55",
-  aboutShape: "https://www.figma.com/api/mcp/asset/9851865b-c308-48d2-b47c-316835039697",
   workGrid1: "https://www.figma.com/api/mcp/asset/905e4972-3a66-4395-aaa9-6387fec75aa4",
   workGrid2: "https://www.figma.com/api/mcp/asset/efa03e4c-7726-43f7-8180-b82aef3820d6",
   workGrid3: "https://www.figma.com/api/mcp/asset/13aaad85-549c-4593-93b0-5e0f19e84818",
@@ -44,44 +78,6 @@ const figma = {
   /** Marquee strip logo mark (Component variant 4 in Figma) */
   marqueeLogo: "https://www.figma.com/api/mcp/asset/6813add5-5f71-4234-b79b-765a1761340f"
 };
-function LandingAbout() {
-  const reduce = useReducedMotion();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "about", className: "flex w-full flex-col items-center gap-20 px-6 py-20 md:px-12 xl:px-[344px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto w-full max-w-[1232px]", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-10 flex items-center justify-center gap-2", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[16px] leading-[19.2px] uppercase", children: "About me" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto max-w-[1006px] pb-16 pt-8 text-center", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display relative z-10 text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.15] font-normal uppercase", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Design that means" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "something" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute top-[18%] right-[12%] left-[12%] z-0 aspect-[1.1] max-h-[320px] md:top-[16%]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: figma.aboutShape, alt: "", className: "size-full object-contain opacity-95" }) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion.p,
-      {
-        className: "mx-auto max-w-[642px] text-center text-[16px] leading-6 text-white",
-        initial: reduce ? false : { opacity: 0, y: 12 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, amount: 0.3 },
-        transition: { duration: 0.5 },
-        children: "I'm a developer who enjoys the craft of interfaces and product details. I blend layout, interaction, and implementation so what ships is easy to use, easy to read in the codebase, and aligned with what the team is trying to achieve."
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "a",
-      {
-        href: "#about",
-        className: "relative inline-flex items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-6 py-4 text-[16px] leading-[19.2px] uppercase text-[#04070a] shadow-pill-inset",
-        children: [
-          "More about me",
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-6 shrink-0", strokeWidth: 1.75, "aria-hidden": true })
-        ]
-      }
-    ) })
-  ] }) });
-}
 function XIcon(props) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("svg", { viewBox: "0 0 24 24", fill: "currentColor", className: props.className, "aria-hidden": true, children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" }) });
 }
@@ -287,14 +283,11 @@ function LandingOurWorks() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.3px] leading-[19.2px] uppercase", children: "Selected work" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto w-full max-w-[1006px] pt-8 pb-24 text-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute inset-[12%_32%] z-0 hidden md:block", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: figma.aboutShape, alt: "", className: "size-full object-contain opacity-80" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display relative z-10 text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] font-normal md:text-[72px] md:leading-[115.2px]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Interfaces built to" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "perform  not just to" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "look good" })
-        ] })
-      ] })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative mx-auto w-full max-w-[1006px] pt-8 pb-24 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display relative z-10 text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] font-normal md:text-[72px] md:leading-[115.2px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Interfaces built to" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "perform  not just to" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "look good" })
+      ] }) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-24 lg:gap-40", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-between gap-8 md:flex-row md:gap-0", children: [
@@ -484,7 +477,7 @@ function LandingStats() {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[768px]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Creativity with" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Shipping with" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "real-world" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "results" })
         ] }),
