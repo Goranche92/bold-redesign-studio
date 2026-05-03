@@ -33,9 +33,9 @@ export function Hero() {
           <span className="block text-gradient">Developer</span>
         </motion.h1>
 
-        <div className="mt-[80px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
-          <div className="flex flex-row flex-wrap items-center justify-center gap-[36px] w-full lg:flex-1 lg:justify-center">
-            <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md leading-relaxed text-center sm:text-left">
+        <div className="mt-[80px] flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-14">
+          <div className="flex flex-row flex-wrap items-center justify-start gap-[28px] w-full lg:flex-1 lg:min-w-0">
+            <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md min-w-0 leading-relaxed text-left">
               I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail.
             </motion.p>
 
