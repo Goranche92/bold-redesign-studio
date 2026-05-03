@@ -192,40 +192,46 @@ function Marquee() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent", children: "✦" })
   ] }, i)) }) });
 }
-const work2 = "/assets/work-2-DU1Qg24r.jpg";
-const work3 = "/assets/work-3-DRWqo5d8.jpg";
+const LANDING_IMAGES = [
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=960&q=80&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=960&q=80&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=960&q=80&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1547658719-da2b51169166?w=960&q=80&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=960&q=80&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=960&q=80&auto=format&fit=crop"
+];
 const works = [
-  { n: "01", tag: "Branding", title: "Finacoo", year: "2025", img: work1 },
-  { n: "02", tag: "UI / UX", title: "Avionix", year: "2025", img: work2 },
-  { n: "03", tag: "Development", title: "Photolab", year: "2024", img: work3 },
-  { n: "04", tag: "Motion", title: "Rowters", year: "2024", img: work2 },
-  { n: "05", tag: "Illustration", title: "Kairo", year: "2024", img: work1 },
-  { n: "06", tag: "Web Design", title: "Nebula", year: "2023", img: work3 }
+  { n: "01", tag: "SaaS", title: "Northwind Analytics", year: "2025", img: LANDING_IMAGES[0] },
+  { n: "02", tag: "Fintech", title: "Ledger Flow App", year: "2025", img: LANDING_IMAGES[1] },
+  { n: "03", tag: "Dev tools", title: "CloudForge CLI", year: "2024", img: LANDING_IMAGES[2] },
+  { n: "04", tag: "E‑commerce", title: "Studio Cart", year: "2024", img: LANDING_IMAGES[3] },
+  { n: "05", tag: "Creative", title: "Pulse Agency Site", year: "2024", img: LANDING_IMAGES[4] },
+  { n: "06", tag: "Product", title: "Nova Health Portal", year: "2023", img: LANDING_IMAGES[5] }
 ];
 const rows = [
   [works[0], works[1]],
   [works[2], works[3]],
   [works[4], works[5]]
 ];
+const SECTION_SCROLL_VH = 520;
 function OurWorks() {
   const containerRef = reactExports.useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
-  const gridY = useTransform(scrollYProgress, [0, 1], ["14vh", "-28vh"]);
-  const rowY0 = useTransform(scrollYProgress, [0, 1], ["0%", "-5%"]);
-  const rowY1 = useTransform(scrollYProgress, [0, 1], ["2%", "-10%"]);
-  const rowY2 = useTransform(scrollYProgress, [0, 1], ["4%", "-15%"]);
-  const rowYs = [rowY0, rowY1, rowY2];
+  const cardsY = useTransform(scrollYProgress, [0.05, 1], ["48vh", "-228vh"]);
+  const titleBlurPx = useTransform(scrollYProgress, [0.1, 0.26, 0.9], [0, 15, 18]);
+  const titleFilter = useTransform(titleBlurPx, (b) => `blur(${b.toFixed(1)}px)`);
+  const titleOpacity = useTransform(scrollYProgress, [0.88, 1], [1, 0.82]);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "section",
     {
       ref: containerRef,
       className: "relative px-6 py-10 md:py-14",
       "aria-label": "Our Works",
-      style: { height: "420vh" },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 min-h-screen w-full overflow-hidden flex flex-col isolate py-6 md:py-10", children: [
+      style: { height: `${SECTION_SCROLL_VH}vh` },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 h-[100dvh] w-full overflow-x-hidden isolate", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
@@ -234,33 +240,25 @@ function OurWorks() {
             style: { backgroundImage: `url(${heroBg})` }
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-gradient-to-b from-background/95 via-background/88 to-background/95" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-black/55" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-gradient-to-b from-background/96 via-background/90 to-background/96" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-black/60" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 backdrop-blur-[2px]" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 z-0 flex items-center justify-center pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "h2",
-          {
-            className: "font-display uppercase font-black text-foreground/[0.06] whitespace-nowrap select-none",
-            style: { fontSize: "clamp(6rem, 18vw, 18rem)", letterSpacing: "-0.04em" },
-            children: "DESIGN BUILT"
-          }
-        ) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           motion.div,
           {
             initial: "hidden",
             whileInView: "show",
             viewport: scrollViewport,
-            variants: stagger(0.1),
-            className: "text-center relative z-10 shrink-0 pb-6 md:pb-8",
+            variants: stagger(0.08),
+            className: "relative z-20 pt-8 md:pt-10 text-center",
             children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
               motion.p,
               {
                 variants: fadeUp,
-                className: "inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/80",
+                className: "inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/75 mb-6 md:mb-8",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-magenta" }),
-                  "Our Works"
+                  "Our works"
                 ]
               }
             )
@@ -269,13 +267,31 @@ function OurWorks() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           motion.div,
           {
-            style: { y: gridY },
-            className: "relative z-10 flex-1 flex items-center w-full max-w-[1400px] mx-auto px-1 md:px-2",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-8 md:gap-10 lg:gap-12", children: rows.map((row, ri) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-              motion.div,
+            style: { filter: titleFilter, opacity: titleOpacity },
+            className: "pointer-events-none absolute left-0 right-0 top-[7.5rem] md:top-[8.5rem] z-40 px-4 text-center",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "h2",
               {
-                style: { y: rowYs[ri] },
-                className: "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8",
+                className: "font-display uppercase font-black leading-[0.95] text-foreground mx-auto max-w-5xl drop-shadow-[0_2px_28px_rgba(0,0,0,0.45)]",
+                style: { fontSize: "clamp(1.65rem, 4.8vw, 3.75rem)" },
+                children: [
+                  "Design built to ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient", children: "perform" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block mt-3 md:mt-5 text-foreground/95", children: "not just to look good" })
+                ]
+              }
+            )
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            style: { y: cardsY },
+            className: "absolute left-0 right-0 top-0 z-10 pt-[min(42vh,340px)] md:pt-[min(38vh,300px)] px-2 md:px-4",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto w-full max-w-[1200px] flex flex-col gap-8 md:gap-10 lg:gap-12", children: rows.map((row, ri) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10",
                 children: row.map((w) => /* @__PURE__ */ jsxRuntimeExports.jsx(WorkCard, { work: w }, w.n))
               },
               ri
@@ -288,10 +304,19 @@ function OurWorks() {
 }
 function WorkCard({ work }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "relative aspect-[5/4] rounded-3xl overflow-hidden bg-card border border-white/15 shadow-2xl ring-1 ring-white/[0.06]", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: work.img, alt: work.title, loading: "lazy", className: "w-full h-full object-cover" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        src: work.img,
+        alt: `${work.title} landing page preview`,
+        loading: "lazy",
+        decoding: "async",
+        className: "w-full h-full object-cover"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 p-5 md:p-7 flex flex-col justify-between", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-xs uppercase tracking-widest text-foreground/80", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-xs uppercase tracking-widest text-foreground/85", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
           work.n,
           " — ",
@@ -302,14 +327,16 @@ function WorkCard({ work }) {
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "h3",
         {
-          className: "font-display uppercase leading-[0.9] text-foreground",
-          style: { fontSize: "clamp(1.5rem, 3.5vw, 3rem)" },
+          className: "font-display uppercase leading-[0.92] text-foreground pr-2",
+          style: { fontSize: "clamp(1.35rem, 3vw, 2.25rem)" },
           children: work.title
         }
       )
     ] })
   ] });
 }
+const work2 = "/assets/work-2-DU1Qg24r.jpg";
+const work3 = "/assets/work-3-DRWqo5d8.jpg";
 const projects = [
   {
     tag: "Branding",
