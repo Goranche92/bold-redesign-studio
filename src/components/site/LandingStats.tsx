@@ -2,9 +2,9 @@ import { figma } from "@/data/figma-assets";
 import { motion, useReducedMotion } from "framer-motion";
 
 const stats = [
-  { value: "208+", lines: ["Projects delivered across digital and", "brand experiences"] },
-  { value: "38+", lines: ["Industries supported through", "strategic design solutions"] },
-  { value: "12", suffix: "Years", lines: ["of hands-on experience shaping", "meaningful visual identities"] },
+  { value: "40+", lines: ["Shipped slices of product — from", "MVPs to refactors and polish passes"] },
+  { value: "15+", lines: ["Codebases and stacks I’ve worked in", "across web, tools, and internal apps"] },
+  { value: "10+", suffix: "Years", lines: ["Hands-on building on the web,", "learning and improving every year"] },
 ];
 
 export function LandingStats() {
@@ -23,13 +23,13 @@ export function LandingStats() {
 
         <div className="max-w-[768px]">
           <h2 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]">
-            <span className="text-gradient-display block">Creativity with</span>
+            <span className="text-gradient-display block">Shipping with</span>
             <span className="text-gradient-display block">real-world</span>
             <span className="text-gradient-display block">results</span>
           </h2>
           <p className="mt-10 max-w-[384px] text-[14.6px] leading-6 text-white">
-            A bold digital presence created to capture sound, energy, and movement — designed to connect people through
-            music-driven experiences.
+            I care about outcomes users feel: fast loads, predictable flows, and interfaces that don’t get in the way. If
+            the product needs to move, I’m happiest when I can own the loop from UI detail to production code.
           </p>
         </div>
 

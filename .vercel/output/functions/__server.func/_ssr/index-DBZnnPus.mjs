@@ -1,6 +1,21 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
+import { m as me } from "./router-K3mFnEbg.mjs";
 import { C as ChevronDown, A as ArrowUpRight, a as ArrowLeft, b as ArrowRight, F as Facebook, I as Instagram, L as Linkedin } from "../_libs/lucide-react.mjs";
 import { u as useReducedMotion, m as motion } from "../_libs/framer-motion.mjs";
+import "../_libs/tanstack__react-router.mjs";
+import "../_libs/tanstack__router-core.mjs";
+import "../_libs/tanstack__history.mjs";
+import "../_libs/cookie-es.mjs";
+import "../_libs/seroval.mjs";
+import "../_libs/seroval-plugins.mjs";
+import "node:stream/web";
+import "node:stream";
+import "../_libs/react-dom.mjs";
+import "util";
+import "crypto";
+import "async_hooks";
+import "stream";
+import "../_libs/isbot.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
 const figma = {
@@ -34,7 +49,7 @@ function LandingAbout() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "about", className: "flex w-full flex-col items-center gap-20 px-6 py-20 md:px-12 xl:px-[344px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto w-full max-w-[1232px]", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-10 flex items-center justify-center gap-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[16px] leading-[19.2px] uppercase", children: "About Us" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[16px] leading-[19.2px] uppercase", children: "About me" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto max-w-[1006px] pb-16 pt-8 text-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display relative z-10 text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.15] font-normal uppercase", children: [
@@ -51,7 +66,7 @@ function LandingAbout() {
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true, amount: 0.3 },
         transition: { duration: 0.5 },
-        children: "We're a creative studio focused on building thoughtful visual and digital experiences. Our work blends strategy, design, and execution to help brands communicate clearly and connect meaningfully with their audience."
+        children: "I'm a developer who enjoys the craft of interfaces and product details. I blend layout, interaction, and implementation so what ships is easy to use, easy to read in the codebase, and aligned with what the team is trying to achieve."
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -60,7 +75,7 @@ function LandingAbout() {
         href: "#about",
         className: "relative inline-flex items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-6 py-4 text-[16px] leading-[19.2px] uppercase text-[#04070a] shadow-pill-inset",
         children: [
-          "Read more",
+          "More about me",
           /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-6 shrink-0", strokeWidth: 1.75, "aria-hidden": true })
         ]
       }
@@ -75,21 +90,25 @@ function LandingFooter() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: figma.footerBg, alt: "", className: "pointer-events-none absolute inset-0 size-full object-cover" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 border-b border-white/20 pb-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid gap-10 md:grid-cols-3 md:gap-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15px] leading-[19.2px] text-white", children: "Call Today" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "tel:+12456567987", className: "text-[22.7px] leading-[19.2px] text-[#f00862]", children: "+12 456 567 987" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15px] leading-[19.2px] text-white", children: "Availability" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[22.7px] leading-[28px] text-[#f00862]", children: "Remote · EU-friendly hours" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-3 text-center", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[14.1px] text-white", children: "Email" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:hello@boldonse.com", className: "text-[21.9px] text-[#f00862]", children: "hello@boldonse.com" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: `mailto:${me.email}`, className: "text-[21.9px] text-[#f00862]", children: me.email })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-end gap-3 text-right", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[14.3px] text-white", children: "Admin" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "mailto:support@boldonse.com", className: "text-[21.9px] text-[#f00862]", children: "support@boldonse.com" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[14.3px] text-white", children: "GitHub" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: me.githubUrl, target: "_blank", rel: "noreferrer", className: "text-[21.9px] text-[#f00862]", children: me.githubHandle })
       ] })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 border-b border-white/20 py-16 text-center md:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-[clamp(4rem,14vw,10rem)] leading-none font-normal uppercase", children: "LET'S-Talk" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 mt-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[14.6px] leading-[19.2px] text-white", children: "Designed by Wroney Powerd by Webflow" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[14.6px] leading-[19.2px] text-white", children: [
+        "Built by ",
+        me.displayName,
+        " — portfolio site, hand-coded."
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-6 text-white", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.facebook.com/", target: "_blank", rel: "noreferrer", "aria-label": "Facebook", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Facebook, { className: "size-6", strokeWidth: 1.25 }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.instagram.com/", target: "_blank", rel: "noreferrer", "aria-label": "Instagram", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Instagram, { className: "size-6", strokeWidth: 1.25 }) }),
@@ -97,9 +116,9 @@ function LandingFooter() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.linkedin.com/", target: "_blank", rel: "noreferrer", "aria-label": "LinkedIn", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "size-6", strokeWidth: 1.25 }) })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-8 text-[16px] underline", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "text-white", children: "License" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "text-white", children: "Styleguide" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "text-white", children: "Chancelog" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: me.githubUrl, target: "_blank", rel: "noreferrer", className: "text-white", children: "Source" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#about", className: "text-white", children: "About" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: `mailto:${me.email}`, className: "text-white", children: "Contact" })
       ] })
     ] })
   ] }) });
@@ -144,9 +163,9 @@ function LandingHero() {
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[clamp(3.5rem,10vw,6.5rem)] leading-[0.95] font-normal tracking-[0.02em] uppercase", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display", children: "Design Studio" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-display text-[clamp(3.5rem,10vw,6.5rem)] leading-[0.95] font-normal tracking-[0.02em] uppercase", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display", children: "Developer" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex max-w-[691px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[420px] text-[18px] leading-[27px] text-white", children: "We transform ideas into fully realised design experiences — from UI/UX and illustration to development — creating work that elevates brands." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[420px] text-[18px] leading-[27px] text-white", children: "I turn ideas into working software — from UI polish and product flows to solid frontends — with a focus on clarity, performance, and code you can build on." }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "a",
             {
@@ -215,7 +234,7 @@ function LandingNavbar() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex h-full w-full max-w-[1920px] items-center justify-between gap-3 px-4 py-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "/", className: "relative z-10 flex min-w-0 shrink items-center gap-3", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: figma.navLogoMark, alt: "", className: "size-10 shrink-0", width: 40, height: 40 }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display text-2xl leading-none font-normal tracking-wide uppercase", children: "Bldonse" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display text-2xl leading-none font-normal tracking-wide uppercase", children: me.navBrand })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "nav",
@@ -266,12 +285,12 @@ function LandingOurWorks() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 z-10 flex w-full flex-col items-center bg-[#04070a]/80 pb-8 backdrop-blur-md", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-2 flex items-center gap-2", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.3px] leading-[19.2px] uppercase", children: "Our works" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.3px] leading-[19.2px] uppercase", children: "Selected work" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto w-full max-w-[1006px] pt-8 pb-24 text-center", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute inset-[12%_32%] z-0 hidden md:block", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: figma.aboutShape, alt: "", className: "size-full object-contain opacity-80" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display relative z-10 text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] font-normal md:text-[72px] md:leading-[115.2px]", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Design built to" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Interfaces built to" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "perform  not just to" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "look good" })
         ] })
@@ -315,13 +334,7 @@ const projects = [
       /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
       "Being Website"
     ] }),
-    body: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      "A calm, human-centered digital experience designed to support",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "emotional well-being through clarity, balance, and thoughtful",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "interaction."
-    ] }),
+    body: /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "I helped shape a calm, supportive interface: clear hierarchy, gentle motion, and content that guides people without noise — then shipped the frontend pieces to match the design intent." }),
     img: figma.project1
   },
   {
@@ -331,13 +344,7 @@ const projects = [
       /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
       "Website"
     ] }),
-    body: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      "A calm, human-centered digital experience designed to support",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "emotional well-being through clarity, balance, and thoughtful",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "interaction."
-    ] }),
+    body: /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "I worked through flows and responsive layouts, tightened typography and spacing, and made sure the experience felt consistent from first visit to deeper screens." }),
     img: figma.project2
   },
   {
@@ -347,13 +354,7 @@ const projects = [
       /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
       "Being Website"
     ] }),
-    body: /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      "A calm, human-centered digital experience designed to support",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "emotional well-being through clarity, balance, and thoughtful",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-      "interaction."
-    ] }),
+    body: /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "I focused on implementation quality: structured components, predictable state, and performance so image-heavy views still feel snappy on real devices." }),
     img: figma.project3
   }
 ];
@@ -362,7 +363,7 @@ function LandingProjects() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "projects", className: "mx-auto w-full max-w-[1232px] px-6 pt-24 pb-8 md:px-6 lg:pt-40", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-8 flex items-center justify-center gap-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.8px] leading-[19.2px] uppercase", children: "Selected Work" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.8px] leading-[19.2px] uppercase", children: "Case studies" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display text-center text-[clamp(2rem,5vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display", children: "Highlighted projects" }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-12 flex flex-col gap-10", children: projects.map((p, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -387,7 +388,7 @@ function LandingProjects() {
                   href: "#works",
                   className: "relative inline-flex w-fit items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-6 py-4 text-[16px] uppercase text-[#04070a] shadow-pill-inset",
                   children: [
-                    "View Project",
+                    "View details",
                     /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-6 shrink-0", strokeWidth: 1.75, "aria-hidden": true })
                   ]
                 }
@@ -402,30 +403,30 @@ function LandingProjects() {
   ] });
 }
 const blurb = /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-  "A calm, human-centered digital experience",
+  "I keep UX calm and readable, prioritize",
   /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-  "designed to support emotional well-being",
+  "performance and accessibility, and write",
   /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-  "through clarity, balance, and thoughtful",
+  "frontends that stay understandable for the",
   /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-  "interaction."
+  "next person who opens the repo."
 ] });
 const rows = [
   { n: "01", title: "Branding", thumb: figma.serviceThumb1 },
   { n: "02", title: "UI / UX Design", thumb: figma.serviceThumb2 },
   { n: "03", title: "Development", thumb: figma.serviceThumb3 },
-  { n: "04", title: "Development", thumb: figma.serviceThumb4 }
+  { n: "04", title: "Consulting", thumb: figma.serviceThumb4 }
 ];
 function LandingServices() {
   const reduce = useReducedMotion();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "services", className: "mx-auto w-full max-w-[1232px] px-6 pt-24 pb-8 md:px-6 lg:pt-40", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-8 flex items-center gap-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.3px] leading-[19.2px] uppercase", children: "Our works" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[15.3px] leading-[19.2px] uppercase", children: "What I offer" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display mb-4 text-[clamp(2rem,5vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Creative solutions end" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "to end" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "End-to-end delivery" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "from idea to UI" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "mt-4 flex flex-col gap-6", children: rows.map((row, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
       motion.li,
@@ -457,7 +458,7 @@ function LandingServices() {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 mt-6 flex items-center gap-6 md:mt-0 md:justify-end", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-[143px] w-[243px] shrink-0 overflow-hidden rounded-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: row.thumb, alt: "", className: "size-full object-cover" }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-[280px] text-left text-[14.6px] leading-6 text-white md:text-right", children: blurb })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[280px] text-left text-[14.6px] leading-6 text-white md:text-right", children: blurb })
               ] })
             ]
           }
@@ -468,9 +469,9 @@ function LandingServices() {
   ] });
 }
 const stats = [
-  { value: "208+", lines: ["Projects delivered across digital and", "brand experiences"] },
-  { value: "38+", lines: ["Industries supported through", "strategic design solutions"] },
-  { value: "12", suffix: "Years", lines: ["of hands-on experience shaping", "meaningful visual identities"] }
+  { value: "40+", lines: ["Shipped slices of product — from", "MVPs to refactors and polish passes"] },
+  { value: "15+", lines: ["Codebases and stacks I’ve worked in", "across web, tools, and internal apps"] },
+  { value: "10+", suffix: "Years", lines: ["Hands-on building on the web,", "learning and improving every year"] }
 ];
 function LandingStats() {
   const reduce = useReducedMotion();
@@ -487,7 +488,7 @@ function LandingStats() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "real-world" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "results" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-10 max-w-[384px] text-[14.6px] leading-6 text-white", children: "A bold digital presence created to capture sound, energy, and movement — designed to connect people through music-driven experiences." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-10 max-w-[384px] text-[14.6px] leading-6 text-white", children: "I care about outcomes users feel: fast loads, predictable flows, and interfaces that don’t get in the way. If the product needs to move, I’m happiest when I can own the loop from UI detail to production code." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6 flex flex-col gap-14 lg:flex-row lg:gap-16", children: stats.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
         motion.div,
@@ -524,14 +525,14 @@ function LandingTestimonial() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: figma.testimonialBg, alt: "", className: "absolute inset-0 size-full object-cover" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex min-h-[480px] flex-col md:min-h-[597px] md:flex-row", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-full bg-[#04070a] px-8 py-12 md:max-w-[484px] md:rounded-br-[32px] md:rounded-tr-[32px] md:py-[60px] md:pr-[52px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("blockquote", { className: "text-[clamp(1.15rem,2.2vw,1.85rem)] leading-[48px] text-white", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "“Working with Boldonse felt" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "effortless. They understood our" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "vision quickly and translated it" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "into a design that was both" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "clear and impactful. The" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "process was smooth, and the" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "results exceeded our" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "expectations.”" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "“Working with Goran felt" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "straightforward. He understood what" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "we needed, asked the right questions," }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "and shipped UI that was both clear" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "and solid in the implementation." }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Communication was easy, and the" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "result matched what we had in mind" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "— with better edge cases covered.”" })
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mt-auto flex flex-col gap-4 px-8 py-10 md:absolute md:bottom-0 md:left-[58%] md:mt-0 md:px-12 md:py-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-[32px] leading-[48px] font-normal uppercase text-[#f00862]", children: "Alex Morgan" }),

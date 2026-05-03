@@ -3,13 +3,13 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const blurb = (
   <>
-    A calm, human-centered digital experience
+    I keep UX calm and readable, prioritize
     <br />
-    designed to support emotional well-being
+    performance and accessibility, and write
     <br />
-    through clarity, balance, and thoughtful
+    frontends that stay understandable for the
     <br />
-    interaction.
+    next person who opens the repo.
   </>
 );
 
@@ -17,7 +17,7 @@ const rows = [
   { n: "01", title: "Branding", thumb: figma.serviceThumb1 },
   { n: "02", title: "UI / UX Design", thumb: figma.serviceThumb2 },
   { n: "03", title: "Development", thumb: figma.serviceThumb3 },
-  { n: "04", title: "Development", thumb: figma.serviceThumb4 },
+  { n: "04", title: "Consulting", thumb: figma.serviceThumb4 },
 ];
 
 export function LandingServices() {
@@ -27,11 +27,11 @@ export function LandingServices() {
     <section id="services" className="mx-auto w-full max-w-[1232px] px-6 pt-24 pb-8 md:px-6 lg:pt-40">
       <div className="mb-8 flex items-center gap-2">
         <span className="size-3 shrink-0 rounded-full bg-[#f00862]" aria-hidden />
-        <span className="text-[15.3px] leading-[19.2px] uppercase">Our works</span>
+        <span className="text-[15.3px] leading-[19.2px] uppercase">What I offer</span>
       </div>
       <h2 className="font-display mb-4 text-[clamp(2rem,5vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]">
-        <span className="text-gradient-display block">Creative solutions end</span>
-        <span className="text-gradient-display block">to end</span>
+        <span className="text-gradient-display block">End-to-end delivery</span>
+        <span className="text-gradient-display block">from idea to UI</span>
       </h2>
 
       <ul className="mt-4 flex flex-col gap-6">

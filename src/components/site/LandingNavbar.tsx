@@ -1,4 +1,5 @@
 import { figma } from "@/data/figma-assets";
+import { me } from "@/data/personal";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 export function LandingNavbar() {
@@ -8,7 +9,7 @@ export function LandingNavbar() {
       <div className="relative flex h-full w-full max-w-[1920px] items-center justify-between gap-3 px-4 py-4">
         <a href="/" className="relative z-10 flex min-w-0 shrink items-center gap-3">
           <img src={figma.navLogoMark} alt="" className="size-10 shrink-0" width={40} height={40} />
-          <span className="font-display text-2xl leading-none font-normal tracking-wide uppercase">Bldonse</span>
+          <span className="font-display text-2xl leading-none font-normal tracking-wide uppercase">{me.navBrand}</span>
         </a>
         <nav
           className="relative z-10 hidden rounded-full border border-dashed border-white/30 bg-white/5 px-[17px] py-[9px] backdrop-blur-[2.5px] md:block"

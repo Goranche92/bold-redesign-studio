@@ -13,7 +13,16 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-B04DBBGg.css";
+const me = {
+  displayName: "Goran",
+  navBrand: "Goran",
+  siteTitle: "Goran — developer & UI",
+  metaDescription: "I'm Goran, a developer who cares about clear UI, maintainable frontends, and shipping things that work in production.",
+  email: "hello@your-email.com",
+  githubUrl: "https://github.com/Goranche92",
+  githubHandle: "Goranche92"
+};
+const appCss = "/assets/styles-BRaShUcW.css";
 function NotFoundComponent() {
   return null;
 }
@@ -23,10 +32,10 @@ const Route$1 = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Boldonse — Creative design studio" },
+      { title: me.siteTitle },
       {
         name: "description",
-        content: "Creative design studio — branding, UI/UX, and development. Design that means something."
+        content: me.metaDescription
       }
     ],
     links: [
@@ -52,7 +61,7 @@ function RootShell({ children }) {
 function RootComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
 }
-const $$splitComponentImporter = () => import("./index-DvrZnR4b.mjs");
+const $$splitComponentImporter = () => import("./index-DBZnnPus.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -61,7 +70,7 @@ const Route = createFileRoute("/")({
       name: "viewport",
       content: "width=device-width, initial-scale=1"
     }, {
-      title: "Boldonse — Creative design studio"
+      title: me.siteTitle
     }]
   }),
   component: lazyRouteComponent($$splitComponentImporter, "component")
@@ -82,15 +91,20 @@ function DefaultErrorComponent() {
   ] });
 }
 const getRouter = () => {
-  const router = createRouter({
+  const router2 = createRouter({
     routeTree,
     context: {},
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent
   });
-  return router;
+  return router2;
 };
-export {
+const router = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
   getRouter
+}, Symbol.toStringTag, { value: "Module" }));
+export {
+  me as m,
+  router as r
 };

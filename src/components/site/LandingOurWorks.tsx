@@ -16,14 +16,14 @@ export function LandingOurWorks() {
       <div className="sticky top-0 z-10 flex w-full flex-col items-center bg-[#04070a]/80 pb-8 backdrop-blur-md">
         <div className="mb-2 flex items-center gap-2">
           <span className="size-3 shrink-0 rounded-full bg-[#f00862]" aria-hidden />
-          <span className="text-[15.3px] leading-[19.2px] uppercase">Our works</span>
+          <span className="text-[15.3px] leading-[19.2px] uppercase">Selected work</span>
         </div>
         <div className="relative mx-auto w-full max-w-[1006px] pt-8 pb-24 text-center">
           <div className="pointer-events-none absolute inset-[12%_32%] z-0 hidden md:block">
             <img src={figma.aboutShape} alt="" className="size-full object-contain opacity-80" />
           </div>
           <h2 className="font-display relative z-10 text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] font-normal md:text-[72px] md:leading-[115.2px]">
-            <span className="text-gradient-display block">Design built to</span>
+            <span className="text-gradient-display block">Interfaces built to</span>
             <span className="text-gradient-display block">perform&nbsp;&nbsp;not just to</span>
             <span className="text-gradient-display block">look good</span>
           </h2>

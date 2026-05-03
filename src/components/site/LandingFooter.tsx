@@ -1,4 +1,5 @@
 import { figma } from "@/data/figma-assets";
+import { me } from "@/data/personal";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 function XIcon(props: { className?: string }) {
@@ -17,21 +18,19 @@ export function LandingFooter() {
         <div className="relative z-10 border-b border-white/20 pb-8">
           <div className="grid gap-10 md:grid-cols-3 md:gap-6">
             <div className="flex flex-col gap-3">
-              <span className="text-[15px] leading-[19.2px] text-white">Call Today</span>
-              <a href="tel:+12456567987" className="text-[22.7px] leading-[19.2px] text-[#f00862]">
-                +12 456 567 987
-              </a>
+              <span className="text-[15px] leading-[19.2px] text-white">Availability</span>
+              <span className="text-[22.7px] leading-[28px] text-[#f00862]">Remote · EU-friendly hours</span>
             </div>
             <div className="flex flex-col items-center gap-3 text-center">
               <span className="text-[14.1px] text-white">Email</span>
-              <a href="mailto:hello@boldonse.com" className="text-[21.9px] text-[#f00862]">
-                hello@boldonse.com
+              <a href={`mailto:${me.email}`} className="text-[21.9px] text-[#f00862]">
+                {me.email}
               </a>
             </div>
             <div className="flex flex-col items-end gap-3 text-right">
-              <span className="text-[14.3px] text-white">Admin</span>
-              <a href="mailto:support@boldonse.com" className="text-[21.9px] text-[#f00862]">
-                support@boldonse.com
+              <span className="text-[14.3px] text-white">GitHub</span>
+              <a href={me.githubUrl} target="_blank" rel="noreferrer" className="text-[21.9px] text-[#f00862]">
+                {me.githubHandle}
               </a>
             </div>
           </div>
@@ -42,7 +41,9 @@ export function LandingFooter() {
         </div>
 
         <div className="relative z-10 mt-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-[14.6px] leading-[19.2px] text-white">Designed by Wroney Powerd by Webflow</p>
+          <p className="text-[14.6px] leading-[19.2px] text-white">
+            Built by {me.displayName} — portfolio site, hand-coded.
+          </p>
           <div className="flex items-center gap-6 text-white">
             <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
               <Facebook className="size-6" strokeWidth={1.25} />
@@ -58,14 +59,14 @@ export function LandingFooter() {
             </a>
           </div>
           <div className="flex flex-wrap gap-8 text-[16px] underline">
-            <a href="#" className="text-white">
-              License
+            <a href={me.githubUrl} target="_blank" rel="noreferrer" className="text-white">
+              Source
             </a>
-            <a href="#" className="text-white">
-              Styleguide
+            <a href="#about" className="text-white">
+              About
             </a>
-            <a href="#" className="text-white">
-              Chancelog
+            <a href={`mailto:${me.email}`} className="text-white">
+              Contact
             </a>
           </div>
         </div>

@@ -49,13 +49,13 @@ export function LandingHero() {
             </a>
           </div>
           <div className="font-display text-[clamp(3.5rem,10vw,6.5rem)] leading-[0.95] font-normal tracking-[0.02em] uppercase">
-            <span className="text-gradient-display">Design Studio</span>
+            <span className="text-gradient-display">Developer</span>
           </div>
 
           <div className="flex max-w-[691px] flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
             <p className="max-w-[420px] text-[18px] leading-[27px] text-white">
-              We transform ideas into fully realised design experiences — from UI/UX and illustration to development —
-              creating work that elevates brands.
+              I turn ideas into working software — from UI polish and product flows to solid frontends — with a focus on
+              clarity, performance, and code you can build on.
             </p>
             <a
               href="#contact"

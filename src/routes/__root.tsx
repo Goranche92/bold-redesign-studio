@@ -1,5 +1,6 @@
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
+import { me } from "@/data/personal";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -14,11 +15,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Boldonse — Creative design studio" },
+      { title: me.siteTitle },
       {
         name: "description",
-        content:
-          "Creative design studio — branding, UI/UX, and development. Design that means something.",
+        content: me.metaDescription,
       },
     ],
     links: [

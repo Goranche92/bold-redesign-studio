@@ -14,11 +14,8 @@ const projects = [
     ),
     body: (
       <>
-        A calm, human-centered digital experience designed to support
-        <br />
-        emotional well-being through clarity, balance, and thoughtful
-        <br />
-        interaction.
+        I helped shape a calm, supportive interface: clear hierarchy, gentle motion, and content that guides people
+        without noise — then shipped the frontend pieces to match the design intent.
       </>
     ),
     img: figma.project1,
@@ -34,11 +31,8 @@ const projects = [
     ),
     body: (
       <>
-        A calm, human-centered digital experience designed to support
-        <br />
-        emotional well-being through clarity, balance, and thoughtful
-        <br />
-        interaction.
+        I worked through flows and responsive layouts, tightened typography and spacing, and made sure the experience
+        felt consistent from first visit to deeper screens.
       </>
     ),
     img: figma.project2,
@@ -54,11 +48,8 @@ const projects = [
     ),
     body: (
       <>
-        A calm, human-centered digital experience designed to support
-        <br />
-        emotional well-being through clarity, balance, and thoughtful
-        <br />
-        interaction.
+        I focused on implementation quality: structured components, predictable state, and performance so image-heavy
+        views still feel snappy on real devices.
       </>
     ),
     img: figma.project3,
@@ -72,7 +63,7 @@ export function LandingProjects() {
     <section id="projects" className="mx-auto w-full max-w-[1232px] px-6 pt-24 pb-8 md:px-6 lg:pt-40">
       <div className="mb-8 flex items-center justify-center gap-2">
         <span className="size-3 shrink-0 rounded-full bg-[#f00862]" aria-hidden />
-        <span className="text-[15.8px] leading-[19.2px] uppercase">Selected Work</span>
+        <span className="text-[15.8px] leading-[19.2px] uppercase">Case studies</span>
       </div>
       <h2 className="font-display text-center text-[clamp(2rem,5vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]">
         <span className="text-gradient-display">Highlighted projects</span>
@@ -101,7 +92,7 @@ export function LandingProjects() {
                   href="#works"
                   className="relative inline-flex w-fit items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-6 py-4 text-[16px] uppercase text-[#04070a] shadow-pill-inset"
                 >
-                  View Project
+                  View details
                   <ArrowUpRight className="size-6 shrink-0" strokeWidth={1.75} aria-hidden />
                 </a>
               </div>

@@ -10,7 +10,7 @@ export function LandingAbout() {
       <div className="relative mx-auto w-full max-w-[1232px]">
         <div className="mb-10 flex items-center justify-center gap-2">
           <span className="size-3 shrink-0 rounded-full bg-[#f00862]" aria-hidden />
-          <span className="text-[16px] leading-[19.2px] uppercase">About Us</span>
+          <span className="text-[16px] leading-[19.2px] uppercase">About me</span>
         </div>
 
         <div className="relative mx-auto max-w-[1006px] pb-16 pt-8 text-center">
@@ -30,9 +30,9 @@ export function LandingAbout() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
-          We&apos;re a creative studio focused on building thoughtful visual and digital experiences. Our work blends
-          strategy, design, and execution to help brands communicate clearly and connect meaningfully with their
-          audience.
+          I&apos;m a developer who enjoys the craft of interfaces and product details. I blend layout, interaction, and
+          implementation so what ships is easy to use, easy to read in the codebase, and aligned with what the team
+          is trying to achieve.
         </motion.p>
 
         <div className="mt-10 flex justify-center">
@@ -40,7 +40,7 @@ export function LandingAbout() {
             href="#about"
             className="relative inline-flex items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-6 py-4 text-[16px] leading-[19.2px] uppercase text-[#04070a] shadow-pill-inset"
           >
-            Read more
+            More about me
             <ArrowUpRight className="size-6 shrink-0" strokeWidth={1.75} aria-hidden />
           </a>
         </div>
