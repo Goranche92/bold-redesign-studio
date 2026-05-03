@@ -9,7 +9,7 @@ import { fadeUp, scrollViewport, stagger } from "./motion-presets";
 const testimonials = [
   {
     quote:
-      "Working with Boldonse felt effortless. They understood our vision quickly and translated it into a design that was both clear and impactful. The process was smooth, and the results exceeded our expectations.",
+      "Working with Goran felt effortless. He understood our vision quickly and translated it into a design that was both clear and impactful. The process was smooth, and the results exceeded our expectations.",
     name: "Alex Morgan",
     role: "Founder, Zyra Music Platform",
     img: t1,
@@ -60,12 +60,12 @@ export function Testimonial() {
       whileInView="show"
       viewport={scrollViewport}
       variants={stagger(0.12)}
-      className="relative px-6 py-32 max-w-[1400px] mx-auto"
+      className="relative px-6 py-24 md:py-32 lg:py-40 max-w-[1400px] mx-auto"
       aria-label="Testimonials"
     >
       <motion.div
         variants={fadeUp}
-        className="flex items-center justify-between mb-8 flex-wrap gap-6"
+        className="flex items-center justify-between mb-10 md:mb-12 flex-wrap gap-8"
       >
         <p className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/80">
           <span className="w-2 h-2 rounded-full bg-magenta" />
@@ -95,7 +95,7 @@ export function Testimonial() {
         variants={fadeUp}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className="relative grid md:grid-cols-2 gap-8 md:gap-0 rounded-[2rem] bg-card border border-white/10 overflow-hidden min-h-[520px] md:min-h-[600px]"
+        className="relative grid md:grid-cols-2 gap-8 md:gap-0 rounded-[2rem] bg-card border border-white/10 overflow-hidden min-h-[520px] md:min-h-[600px] mt-4"
       >
         {/* Subtle blue glow behind portrait */}
         <div className="pointer-events-none absolute -right-20 top-0 h-full w-2/3 bg-gradient-to-l from-electric/30 via-electric/10 to-transparent blur-3xl" />
@@ -162,7 +162,7 @@ export function Testimonial() {
       </motion.div>
 
       {/* Progress dots */}
-      <div className="mt-8 flex items-center justify-center gap-3">
+      <div className="mt-12 flex items-center justify-center gap-3">
         {testimonials.map((_, i) => (
           <button
             key={i}

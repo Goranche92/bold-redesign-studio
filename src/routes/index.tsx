@@ -12,10 +12,18 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BLDONSE — Creative Design Studio" },
-      { name: "description", content: "Bold, end-to-end design studio crafting brand, UI/UX, and development experiences that elevate brands." },
-      { property: "og:title", content: "BLDONSE — Creative Design Studio" },
-      { property: "og:description", content: "Bold, end-to-end design studio crafting brand, UI/UX, and development experiences." },
+      { title: "Goran Šantić — Freelance developer & designer" },
+      {
+        name: "description",
+        content:
+          "Freelance developer and designer focused on UI/UX, frontend, and thoughtful digital products — from concepts to shipped interfaces.",
+      },
+      { property: "og:title", content: "Goran Šantić — Freelance developer & designer" },
+      {
+        property: "og:description",
+        content:
+          "Freelance developer and designer — UI/UX, frontend, and digital products built with clarity and craft.",
+      },
     ],
   }),
   component: Index,
@@ -23,7 +31,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />

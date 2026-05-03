@@ -32,11 +32,15 @@ const projects = [
   },
 ];
 
-/** 0 = fully front, 1 = fully stacked behind next cards */
+/**
+ * Scroll-driven stack (boldonse-style): as the next card takes focus, this one
+ * recedes with scale, lift, and dim — like a deck being dealt upward.
+ * 0 = card is "active" in front, 1 = fully pushed behind the next.
+ */
 function stackedAmount(progress: number, index: number, total: number): number {
   if (index >= total - 1) return 0;
   const handoff = (index + 1) / total;
-  const blend = 0.07;
+  const blend = 0.1;
   if (progress <= handoff - blend) return 0;
   if (progress >= handoff + blend) return 1;
   const t = (progress - (handoff - blend)) / (2 * blend);
@@ -51,17 +55,17 @@ export function HighlightedProjects() {
   });
 
   return (
-    <section className="relative px-6 pt-32 pb-10 max-w-[1400px] mx-auto">
+    <section className="relative px-6 pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24 max-w-[1400px] mx-auto">
       <motion.div
         initial="hidden"
         whileInView="show"
         viewport={{ ...scrollViewport, once: true }}
         variants={stagger(0.12)}
-        className="text-center mb-16 md:mb-24"
+        className="text-center mb-20 md:mb-28"
       >
         <motion.p
           variants={fadeUp}
-          className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/70 mb-8"
+          className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/70 mb-10 md:mb-12"
         >
           <span className="w-2 h-2 rounded-full bg-magenta" />
           Selected Work
@@ -77,8 +81,8 @@ export function HighlightedProjects() {
 
       <div
         ref={containerRef}
-        className="relative [perspective:1400px]"
-        style={{ paddingBottom: "min(40vh, 420px)" }}
+        className="relative [perspective:1800px] [perspective-origin:50%_0%]"
+        style={{ paddingBottom: "min(48vh, 520px)" }}
       >
         {projects.map((p, i) => (
           <ProjectCard
@@ -113,12 +117,13 @@ function ProjectCard({
     reduce ? 0 : stackedAmount(v, index, total)
   );
 
-  const scale = useTransform(stack, [0, 1], [1, 0.9]);
-  const opacity = useTransform(stack, [0, 1], [1, 0.62]);
-  const rotateX = useTransform(stack, [0, 1], [0, -4]);
-  const y = useTransform(stack, [0, 1], [0, -6]);
-  const rimOpacity = useTransform(stack, [0, 1], [0, 0.35]);
-  const imgScale = useTransform(stack, [0, 1], [1, 1.03]);
+  const scale = useTransform(stack, [0, 1], [1, 0.86]);
+  const opacity = useTransform(stack, [0, 1], [1, 0.48]);
+  const rotateX = useTransform(stack, [0, 1], [0, -10]);
+  const y = useTransform(stack, [0, 1], [0, -14]);
+  const z = useTransform(stack, [0, 1], [0, -80]);
+  const rimOpacity = useTransform(stack, [0, 1], [0, 0.55]);
+  const imgScale = useTransform(stack, [0, 1], [1, 1.06]);
 
   const isLast = index === total - 1;
 
@@ -126,8 +131,8 @@ function ProjectCard({
     <div
       className="sticky flex justify-center"
       style={{
-        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 5rem) + ${index * 28}px)`,
-        marginBottom: isLast ? "min(45vh, 520px)" : "min(72vh, 760px)",
+        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 4.5rem) + ${index * 36}px)`,
+        marginBottom: isLast ? "min(50vh, 560px)" : "min(78vh, 820px)",
         zIndex: 10 + index,
       }}
     >
@@ -137,11 +142,12 @@ function ProjectCard({
           opacity: reduce ? 1 : opacity,
           rotateX: reduce ? 0 : rotateX,
           y: reduce ? 0 : y,
+          translateZ: reduce ? 0 : z,
           transformStyle: "preserve-3d",
           width: "100%",
           maxWidth: "1400px",
         }}
-        className="relative grid md:grid-cols-12 gap-8 items-stretch rounded-[2rem] border border-white/10 bg-card p-6 md:p-10 overflow-hidden shadow-2xl ring-1 ring-white/[0.06] origin-center will-change-transform"
+        className="relative grid md:grid-cols-12 gap-10 md:gap-12 items-stretch rounded-[2rem] border border-white/10 bg-card p-8 md:p-12 lg:p-14 overflow-hidden shadow-2xl ring-1 ring-white/[0.06] origin-[center_top] will-change-transform"
       >
         <motion.div
           className="pointer-events-none absolute inset-0 rounded-[2rem]"

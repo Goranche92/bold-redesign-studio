@@ -13,7 +13,7 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-BgQPRr4v.css";
+const appCss = "/assets/styles-Uoyqa9mQ.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -69,20 +69,20 @@ function RootShell({ children }) {
 function RootComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
 }
-const $$splitComponentImporter = () => import("./index-NRFRNMrZ.mjs");
+const $$splitComponentImporter = () => import("./index-COxyLz7q.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
-      title: "BLDONSE — Creative Design Studio"
+      title: "Goran Šantić — Freelance developer & designer"
     }, {
       name: "description",
-      content: "Bold, end-to-end design studio crafting brand, UI/UX, and development experiences that elevate brands."
+      content: "Freelance developer and designer focused on UI/UX, frontend, and thoughtful digital products — from concepts to shipped interfaces."
     }, {
       property: "og:title",
-      content: "BLDONSE — Creative Design Studio"
+      content: "Goran Šantić — Freelance developer & designer"
     }, {
       property: "og:description",
-      content: "Bold, end-to-end design studio crafting brand, UI/UX, and development experiences."
+      content: "Freelance developer and designer — UI/UX, frontend, and digital products built with clarity and craft."
     }]
   }),
   component: lazyRouteComponent($$splitComponentImporter, "component")

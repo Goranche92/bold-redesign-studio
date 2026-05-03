@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="relative mt-20 px-6 py-16 md:py-20 overflow-hidden"
+      className="relative mt-24 md:mt-32 px-6 py-20 md:py-28 overflow-hidden"
     >
       {/* Soft side glows like in the reference */}
       <div className="pointer-events-none absolute -left-32 top-1/3 w-[420px] h-[420px] rounded-full bg-magenta/25 blur-[140px]" />
@@ -12,7 +12,7 @@ export function Footer() {
 
       <div className="relative max-w-[1400px] mx-auto">
         {/* Top row: contact info */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-6 pb-8 border-b border-white/10">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-12 pb-12 md:pb-14 border-b border-white/10">
           <div>
             <p className="text-sm text-foreground/70 mb-2">Call Today</p>
             <a
@@ -43,7 +43,7 @@ export function Footer() {
         </div>
 
         {/* Giant LET'S-TALK headline */}
-        <div className="py-16 md:py-24 flex justify-center">
+        <div className="py-20 md:py-28 flex justify-center">
           <h2
             className="font-display uppercase font-black leading-[0.85] text-foreground text-center"
             style={{ fontSize: "clamp(4rem, 18vw, 18rem)", letterSpacing: "-0.03em" }}

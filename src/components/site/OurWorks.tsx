@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import heroBg from "@/assets/hero-gradient.jpg";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
@@ -24,15 +25,23 @@ export function OurWorks() {
   return (
     <section
       ref={containerRef}
-      className="relative px-6"
+      className="relative px-6 py-8 md:py-12"
       aria-label="Our Works"
-      style={{ height: `${(works.length + 1) * 90}vh` }}
+      style={{ height: `${(works.length + 1) * 95}vh` }}
     >
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col">
-        {/* Background headline (sticky, stays put) */}
-        <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col isolate">
+        {/* Fixed-in-viewport background: stays visually fixed while cards scroll up (boldonse-style) */}
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 -z-10 bg-background/80 backdrop-blur-[2px]" />
+
+        {/* Watermark over bg */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
           <h2
-            className="font-display uppercase font-black text-foreground/[0.06] whitespace-nowrap select-none"
+            className="font-display uppercase font-black text-foreground/[0.07] whitespace-nowrap select-none"
             style={{ fontSize: "clamp(8rem, 22vw, 22rem)", letterSpacing: "-0.04em" }}
           >
             DESIGN BUILT
@@ -44,7 +53,7 @@ export function OurWorks() {
           whileInView="show"
           viewport={scrollViewport}
           variants={stagger(0.1)}
-          className="pt-16 pb-4 text-center relative z-10"
+          className="pt-12 md:pt-20 pb-6 md:pb-8 text-center relative z-10"
         >
           <motion.p
             variants={fadeUp}
@@ -55,7 +64,7 @@ export function OurWorks() {
           </motion.p>
         </motion.div>
 
-        <div className="relative flex-1 w-full max-w-[1400px] mx-auto">
+        <div className="relative z-10 flex-1 w-full max-w-[1400px] mx-auto">
           {works.map((w, i) => (
             <WorkCard
               key={w.n}
@@ -116,7 +125,7 @@ function WorkCard({
   return (
     <motion.article
       style={{ y: y as unknown as number, opacity, scale }}
-      className={`absolute top-[6vh] w-[88%] sm:w-[64%] md:w-[46%] lg:w-[42%] aspect-[5/4] rounded-3xl overflow-hidden bg-card border border-white/10 shadow-2xl ${
+      className={`absolute top-[8vh] md:top-[10vh] w-[88%] sm:w-[64%] md:w-[46%] lg:w-[42%] aspect-[5/4] rounded-3xl overflow-hidden bg-card border border-white/15 shadow-2xl ring-1 ring-white/[0.06] ${
         isLeft ? "left-0 md:left-[2%]" : "right-0 md:right-[2%]"
       }`}
     >

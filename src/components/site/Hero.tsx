@@ -9,7 +9,7 @@ export function Hero() {
       whileInView="show"
       viewport={scrollViewportLoose}
       variants={stagger(0.15)}
-      className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-6 pt-32 pb-20"
+      className="relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-6 pt-28 pb-28 md:pt-32 md:pb-36"
     >
       {/* Gradient backdrop */}
       <div className="absolute inset-0 -z-10">
@@ -31,12 +31,12 @@ export function Hero() {
             Creative
             <SeeProjectsBadge />
           </span>
-          <span className="block text-gradient">Design Studio</span>
+          <span className="block text-gradient">Developer</span>
         </motion.h1>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-10 items-end">
-          <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md">
-            We transform ideas into fully realised design experiences — from UI/UX and illustration to development — creating work that elevates brands.
+        <div className="mt-20 md:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end">
+          <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md leading-relaxed">
+            I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail.
           </motion.p>
 
           <motion.div variants={scaleIn} className="flex justify-center">

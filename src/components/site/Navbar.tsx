@@ -9,9 +9,14 @@ export function Navbar() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between"
     >
-      <Link to="/" className="flex items-center gap-2 text-foreground font-display text-2xl tracking-tight">
-        <span className="inline-block w-7 h-7 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)]" />
-        BLDONSE
+      <Link
+        to="/"
+        className="flex items-center gap-2 md:gap-3 text-foreground font-display text-lg sm:text-xl md:text-2xl tracking-tight"
+      >
+        <span className="inline-block w-6 h-6 md:w-7 md:h-7 shrink-0 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)]" />
+        <span className="leading-none">
+          Goran <span className="text-gradient">Šantić</span>
+        </span>
       </Link>
 
       <nav className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-2">
