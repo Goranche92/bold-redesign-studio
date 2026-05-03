@@ -3,7 +3,6 @@ export const figma = {
   heroBgA: "https://www.figma.com/api/mcp/asset/e965eb2d-179c-423e-aa04-a83d7e497f53",
   heroBgB: "https://www.figma.com/api/mcp/asset/636af594-4930-4e55-863b-111119543663",
   seeProjectsBadge: "https://www.figma.com/api/mcp/asset/16ffe5cb-6dfd-4318-be4d-3b127ad14e55",
-  aboutShape: "https://www.figma.com/api/mcp/asset/9851865b-c308-48d2-b47c-316835039697",
   workGrid1: "https://www.figma.com/api/mcp/asset/905e4972-3a66-4395-aaa9-6387fec75aa4",
   workGrid2: "https://www.figma.com/api/mcp/asset/efa03e4c-7726-43f7-8180-b82aef3820d6",
   workGrid3: "https://www.figma.com/api/mcp/asset/13aaad85-549c-4593-93b0-5e0f19e84818",

@@ -12,10 +12,10 @@ export function LandingAbout() {
           <span className="text-[16px] leading-[19.2px] uppercase">About me</span>
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[1006px] min-h-[400px] flex-col items-center justify-center px-6 pt-[31px] pb-[120px] text-center md:min-h-[520px] md:px-[92px]">
-          <h2 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.15] font-normal uppercase md:text-[72px] md:leading-[115.2px]">
-            <span className="text-gradient-display block">Design that means</span>
-            <span className="text-gradient-display block">something</span>
+        <div className="relative mx-auto flex w-full max-w-[1006px] min-h-[560px] flex-col items-center justify-center overflow-visible px-6 pt-20 pb-[120px] text-center md:min-h-[720px] md:px-[92px] md:pt-28 md:pb-[140px]">
+          <h2 className="font-display flex flex-col items-center gap-8 text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.2] font-normal uppercase md:gap-12 md:text-[72px] md:leading-[1.08]">
+            <span className="text-gradient-display block pb-1">Design that means</span>
+            <span className="text-gradient-display block pt-1">something</span>
           </h2>
         </div>
 
