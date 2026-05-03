@@ -13,21 +13,21 @@ import { fadeUp, scrollViewport, stagger } from "./motion-presets";
 
 const projects = [
   {
-    tag: "Branding",
-    title: "Finaco — Mental Well-Being Website",
-    desc: "A calm, human-centered digital experience designed to support emotional well-being through clarity, balance, and thoughtful interaction.",
+    tag: "Product UI",
+    title: "SaaS dashboard — analytics & billing",
+    desc: "Role: lead frontend. Dense tables, filters, and charts with optimistic updates and accessible keyboard flows — shipped for a small product team.",
     img: work2,
   },
   {
-    tag: "UI / UX Design",
-    title: "Vudo — Fintech Identity System",
-    desc: "A confident financial brand built around clarity, motion, and trust — from logo system to product UI.",
+    tag: "Marketing site",
+    title: "Founder landing — motion & storytelling",
+    desc: "Role: design + build. Scroll-driven narrative, CMS-friendly sections, and performance budget so Lighthouse stayed in the green.",
     img: work1,
   },
   {
-    tag: "Development",
-    title: "Photolab — Visual Storytelling Site",
-    desc: "A high-performance editorial platform built to showcase imagery with cinematic transitions and butter-smooth scroll.",
+    tag: "Design system",
+    title: "Component library — tokens to code",
+    desc: "Role: implementation partner. Mapped tokens to CSS variables, documented patterns, and cut duplicate UI work for the next two releases.",
     img: work3,
   },
 ];
@@ -55,7 +55,7 @@ export function HighlightedProjects() {
   });
 
   return (
-    <section className="relative px-6 pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24 max-w-[1400px] mx-auto">
+    <section id="projects" className="relative px-6 pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24 max-w-[1232px] mx-auto">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -72,9 +72,9 @@ export function HighlightedProjects() {
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="font-display uppercase font-black leading-[1.08] text-foreground"
+          className="font-display uppercase font-normal leading-[1.08] text-gradient-display max-w-[1100px] mx-auto [text-wrap:balance]"
         >
-          Highlighted <span className="text-gradient">Projects</span>
+          HIGHLIGHTED PROJECTS
         </motion.h2>
       </motion.div>
 

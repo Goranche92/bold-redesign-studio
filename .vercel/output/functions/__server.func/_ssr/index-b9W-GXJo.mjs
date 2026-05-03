@@ -1,7 +1,7 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { m as motion, u as useScroll, a as useTransform, A as AnimatePresence, b as useReducedMotion } from "../_libs/framer-motion.mjs";
-import { A as ArrowLeft, a as ArrowRight, F as Facebook, I as Instagram, T as Twitter, L as Linkedin } from "../_libs/lucide-react.mjs";
+import { C as ChevronDown, A as ArrowLeft, a as ArrowRight, G as Github, L as Linkedin, I as Instagram } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -17,50 +17,68 @@ import "stream";
 import "../_libs/isbot.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
+const nav = [
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" }
+];
 function Navbar() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
     motion.header,
     {
-      initial: { y: -40, opacity: 0 },
+      initial: { y: -24, opacity: 0 },
       animate: { y: 0, opacity: 1 },
-      transition: { duration: 0.7, ease: "easeOut" },
-      className: "fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between",
-      children: [
+      transition: { duration: 0.6, ease: "easeOut" },
+      className: "fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] backdrop-blur-xl bg-[oklch(0.05_0.02_280/0.72)]",
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-[1280px] px-4 md:px-6 h-[90px] flex items-center justify-between gap-4", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           Link,
           {
             to: "/",
-            className: "flex items-center gap-2 md:gap-3 text-foreground font-sans font-semibold text-lg sm:text-xl md:text-2xl tracking-tight",
+            className: "flex items-center gap-3 text-foreground font-sans font-medium text-base md:text-lg shrink-0",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-6 h-6 md:w-7 md:h-7 shrink-0 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)]" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "leading-none", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "leading-tight tracking-tight", children: [
                 "Goran ",
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient", children: "Šantić" })
               ] })
             ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "hidden md:flex items-center gap-1 glass rounded-full px-2 py-2", children: ["Home", "About", "Project", "Services"].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "a",
-          {
-            href: "#",
-            className: "px-5 py-2 rounded-full text-sm text-foreground/80 hover:text-foreground hover:bg-white/10 transition-colors",
-            children: item
-          },
-          item
-        )) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "hidden lg:flex items-center justify-center flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 rounded-full px-2 py-2", children: [
+          nav.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "a",
+            {
+              href: item.href,
+              className: "px-4 py-2 rounded-full text-sm text-foreground/85 hover:text-foreground hover:bg-white/10 transition-colors font-sans",
+              children: item.label
+            },
+            item.label
+          )),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "a",
+            {
+              href: "#services",
+              className: "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-foreground/85 hover:text-foreground hover:bg-white/10 transition-colors font-sans",
+              children: [
+                "Services",
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "w-4 h-4 opacity-70", "aria-hidden": true })
+              ]
+            }
+          )
+        ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "a",
           {
             href: "#contact",
-            className: "group flex items-center gap-2 bg-foreground text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:scale-105 transition-transform",
+            className: "relative inline-flex items-center gap-3 shrink-0 rounded-full bg-white pl-[25px] pr-2 py-[17px] text-[#04070A] font-sans text-sm uppercase shadow-[inset_0_2px_0.4px_rgba(4,7,10,0.16)] border border-[rgba(4,7,10,0.35)] border-dashed hover:scale-[1.02] transition-transform",
             children: [
-              "LET'S TALK",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white text-xs", children: "✕" })
+              "Let's Talk",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white text-xs", children: "↗" })
             ]
           }
         )
-      ]
+      ] })
     }
   );
 }
@@ -92,58 +110,94 @@ function Hero() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.section,
     {
+      id: "top",
       initial: "hidden",
       whileInView: "show",
       viewport: scrollViewportLoose,
       variants: stagger(0.15),
-      className: "relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-6 pt-28 pb-28 md:pt-32 md:pb-36",
+      className: "relative min-h-screen w-full overflow-hidden flex flex-col justify-center px-6 pt-32 pb-24 md:px-12 lg:px-[min(344px,18vw)] md:pt-40 md:pb-32",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 -z-10", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: heroBg, alt: "", className: "w-full h-full object-cover opacity-90" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/50" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-[oklch(0.55_0.32_340)] blur-[120px] opacity-60 animate-blob -z-10" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-[oklch(0.5_0.28_255)] blur-[140px] opacity-60 animate-blob -z-10", style: { animationDelay: "4s" } }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1400px] mx-auto w-full", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.h1,
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            className: "absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-[oklch(0.5_0.28_255)] blur-[140px] opacity-60 animate-blob -z-10",
+            style: { animationDelay: "4s" }
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1232px] mx-auto w-full", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid w-full lg:grid-cols-[minmax(0,1fr)_minmax(0,0.28fr)] lg:gap-x-4 items-end", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-[60px] w-full min-w-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.h1, { variants: fadeUp, className: "flex flex-col gap-12 w-full", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex flex-wrap items-center gap-12", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display uppercase text-white !tracking-[2.08px] text-[clamp(3rem,10vw,104px)] leading-[1.08] md:leading-[208px]", children: "CREATIVE" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(SeeProjectsBadge, {})
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display uppercase font-normal text-gradient-display !tracking-[2.08px] text-[clamp(3rem,10vw,104px)] leading-[1.08] md:leading-[166.4px]", children: "DEVELOPER" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid w-full max-w-[691px] grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-6 items-start", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.p,
+                {
+                  variants: fadeUpSm,
+                  className: "text-white text-[18px] leading-[27px] max-w-[510px] min-w-0 text-left font-sans",
+                  children: "I'm Goran — I turn product ideas into shipped web interfaces: clear UX, solid frontends, and maintainable code. I work directly with founders and teams — no agency layer — from first sketch to deploy."
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: scaleIn, className: "flex sm:justify-end sm:items-start", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "#contact",
+                  className: "relative inline-flex items-center gap-3 rounded-full bg-white pl-[25px] pr-2 py-[17px] text-foreground shadow-[inset_0_2px_0.4px_rgba(4,7,10,0.16)] border border-[rgba(4,7,10,0.4)] border-dashed font-sans text-base uppercase text-[#04070A] hover:scale-[1.02] transition-transform",
+                  children: [
+                    "Let's Talk",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white text-sm", children: "↗" })
+                  ]
+                }
+              ) })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.ul,
             {
-              variants: fadeUp,
-              className: "font-display uppercase font-black flex flex-col gap-[100px] tracking-[2.1px] max-md:gap-12 max-md:text-[clamp(2.75rem,11vw,4.25rem)] max-md:leading-[1.08] md:text-[104px] md:leading-[208px]",
+              variants: fadeRight,
+              className: "mt-12 lg:mt-0 flex flex-col gap-4 items-start lg:items-end lg:justify-end lg:pb-1",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-6 flex-wrap text-white", children: [
-                  "Creative",
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SeeProjectsBadge, {})
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-gradient", children: "Developer" })
-              ]
+                { label: "LinkedIn", href: "https://www.linkedin.com/" },
+                { label: "GitHub", href: "https://github.com/" },
+                { label: "Instagram", href: "https://www.instagram.com/" }
+              ].map((s) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: s.href,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className: "inline-flex items-center gap-3 text-white font-sans text-base leading-[19.2px] hover:opacity-70 transition",
+                  children: [
+                    s.label,
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs opacity-80", children: "↗" })
+                  ]
+                }
+              ) }, s.label))
             }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUpSm, className: "text-foreground/80 text-lg max-w-md leading-relaxed", children: "I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: scaleIn, className: "flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#contact", className: "flex items-center gap-3 bg-foreground text-primary-foreground pl-8 pr-2 py-2 rounded-full text-base font-medium hover:scale-105 transition-transform", children: [
-              "LET'S TALK",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white", children: "✕" })
-            ] }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(motion.ul, { variants: fadeRight, className: "space-y-3 md:text-right text-foreground/90", children: ["Facebook", "Linkedin", "Instagram"].map((s) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#", className: "inline-flex items-center gap-2 hover:text-foreground/60 transition", children: [
-              s,
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "↗" })
-            ] }) }, s)) })
-          ] })
-        ] })
+          )
+        ] }) })
       ]
     }
   );
 }
 function SeeProjectsBadge() {
   const text = "• SEE PROJECTS • SEE PROJECTS ";
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex relative w-[140px] h-[140px] md:w-[180px] md:h-[180px] glass rounded-full items-center justify-center shrink-0", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#work", className: "inline-flex relative w-[144px] h-[144px] glass rounded-full items-center justify-center shrink-0", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { viewBox: "0 0 200 200", className: "absolute inset-0 w-full h-full animate-spin-slow", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { id: "circle", d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("text", { fill: "white", fontSize: "14", fontFamily: "var(--font-sans)", letterSpacing: "2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("textPath", { href: "#circle", children: text + text }) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { id: "hero-circle", d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("text", { fill: "white", fontSize: "14", fontFamily: "var(--font-sans)", letterSpacing: "2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("textPath", { href: "#hero-circle", children: text + text }) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-3xl", children: "↓" })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-3xl relative z-[1]", children: "↓" })
   ] });
 }
 const work1 = "/assets/work-1-DTJH4IxY.jpg";
@@ -151,45 +205,78 @@ function About() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.section,
     {
+      id: "about",
       initial: "hidden",
       whileInView: "show",
       viewport: scrollViewport,
-      variants: stagger(0.15),
-      className: "relative px-6 py-24 md:py-32 lg:py-40 max-w-[1400px] mx-auto",
+      variants: stagger(0.12),
+      className: "relative px-6 py-20 md:py-24 lg:py-28 max-w-[1232px] mx-auto",
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "text-sm uppercase tracking-widest text-foreground/60 mb-10 md:mb-14", children: "— About" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-12 gap-12 md:gap-x-16 md:gap-y-20 items-end", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { variants: fadeUp, className: "flex justify-center items-center gap-2 mb-10 md:mb-12", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-3 h-3 rounded-full bg-[#F00862] shrink-0", "aria-hidden": true }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base uppercase tracking-normal text-white font-sans leading-[19.2px]", children: "About me" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto max-w-[1006px] pb-6 md:pb-12", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             motion.h2,
             {
               variants: fadeUp,
-              className: "md:col-span-8 font-display uppercase font-black leading-[1.02] tracking-tight text-foreground [text-wrap:balance]",
-              style: { fontSize: "clamp(2.5rem, 7vw, 7rem)" },
+              className: "relative z-10 font-display uppercase text-center text-gradient-display text-[clamp(2.25rem,6vw,72px)] leading-[1.08] md:leading-[115.2px] px-4 md:px-[92px] pt-6 md:pt-8 [text-wrap:balance]",
               children: [
-                "Design & code that ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient", children: "mean" }),
-                " something"
+                "CODE THAT MEANS",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+                "SOMETHING"
               ]
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: scaleIn, className: "md:col-span-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: work1, alt: "Iridescent abstract sculpture", loading: "lazy", className: "w-full rounded-3xl glow" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: scaleIn, className: "relative z-20 -mt-10 md:-mt-16 mx-auto w-[min(72vw,293px)] aspect-square", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: work1, alt: "", loading: "lazy", className: "w-full h-full object-cover rounded-3xl glow" }) })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "mt-16 md:mt-20 max-w-2xl text-lg md:text-xl text-foreground/80 leading-relaxed", children: "I'm Goran — a freelance developer and designer. I partner directly with clients on products and marketing sites: UX flows, UI craft, design systems, and production-ready frontends. No agency overhead — just clear communication, fast iteration, and work meant to ship." }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.a, { variants: fadeUp, href: "#contact", className: "mt-10 md:mt-12 inline-flex items-center gap-3 text-foreground hover:text-accent transition", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: "Let's talk" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex w-10 h-10 items-center justify-center rounded-full border border-white/20", children: "↗" })
-        ] })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.p,
+          {
+            variants: fadeUp,
+            className: "mx-auto max-w-[642px] text-center text-white font-sans text-base leading-6 md:leading-6 px-2",
+            children: "I build thoughtful digital products end to end — UX flows, UI polish, and production-ready frontends. My process is direct: I listen, propose, implement, and iterate with you until the experience feels right for real users and real constraints."
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: fadeUp, className: "flex justify-center mt-10 md:mt-12", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "a",
+          {
+            href: "#contact",
+            className: "relative inline-flex items-center gap-3 rounded-full bg-white pl-[25px] pr-2 py-[17px] uppercase text-sm font-sans text-[#04070A] shadow-[inset_0_2px_0.4px_rgba(4,7,10,0.16)] border border-[rgba(4,7,10,0.4)] border-dashed hover:scale-[1.02] transition-transform",
+            children: [
+              "Read more",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex w-9 h-9 items-center justify-center rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white text-xs", children: "↗" })
+            ]
+          }
+        ) })
       ]
     }
   );
 }
 function Marquee() {
-  const items = ["BRANDING", "UI / UX", "DEVELOPMENT", "ILLUSTRATION", "MOTION", "STRATEGY"];
+  const items = [
+    "REACT",
+    "TYPESCRIPT",
+    "TANSTACK",
+    "PERFORMANCE",
+    "A11Y",
+    "DESIGN SYSTEMS",
+    "NODE",
+    "APIs"
+  ];
   const row = [...items, ...items, ...items];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-white/10 py-12 md:py-14 my-4 md:my-6 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex animate-marquee whitespace-nowrap gap-12", children: row.map((t, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-sans uppercase font-semibold text-5xl md:text-7xl text-foreground/90 flex items-center gap-12", children: [
-    t,
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent", children: "✦" })
-  ] }, i)) }) });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "border-y border-[#202020] py-10 md:py-12 my-2 md:my-4 overflow-hidden bg-[oklch(0.05_0.02_280)]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex animate-marquee whitespace-nowrap gap-6 md:gap-10", children: row.map((t, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "span",
+    {
+      className: "font-sans uppercase font-semibold text-4xl md:text-6xl lg:text-7xl text-foreground/90 flex items-center gap-6 md:gap-10",
+      children: [
+        t,
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-accent", children: "✦" })
+      ]
+    },
+    `${t}-${i}`
+  )) }) });
 }
 const LANDING_IMAGES = [
   "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=960&q=80&auto=format&fit=crop",
@@ -226,6 +313,7 @@ function OurWorks() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "section",
     {
+      id: "work",
       ref: containerRef,
       className: "relative px-6 py-10 md:py-14",
       "aria-label": "Our Works",
@@ -268,18 +356,10 @@ function OurWorks() {
           {
             style: { filter: titleFilter, opacity: titleOpacity },
             className: "pointer-events-none absolute left-0 right-0 top-[7.5rem] md:top-[8.5rem] z-40 px-4 text-center",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "h2",
-              {
-                className: "font-display uppercase font-black leading-[0.95] text-foreground mx-auto max-w-5xl drop-shadow-[0_2px_28px_rgba(0,0,0,0.45)]",
-                style: { fontSize: "clamp(1.65rem, 4.8vw, 3.75rem)" },
-                children: [
-                  "Design built to ",
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient", children: "perform" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block mt-3 md:mt-5 text-foreground/95", children: "not just to look good" })
-                ]
-              }
-            )
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display uppercase font-black leading-[1.08] text-gradient-display mx-auto max-w-5xl drop-shadow-[0_2px_28px_rgba(0,0,0,0.45)] [text-wrap:balance]", children: [
+              "Code built to perform",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block mt-3 md:mt-5", children: "not just to ship" })
+            ] })
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -336,23 +416,112 @@ function WorkCard({ work }) {
 }
 const work2 = "/assets/work-2-DU1Qg24r.jpg";
 const work3 = "/assets/work-3-DRWqo5d8.jpg";
-const projects = [
+const services = [
   {
-    tag: "Branding",
-    title: "Finaco — Mental Well-Being Website",
-    desc: "A calm, human-centered digital experience designed to support emotional well-being through clarity, balance, and thoughtful interaction.",
-    img: work2
-  },
-  {
-    tag: "UI / UX Design",
-    title: "Vudo — Fintech Identity System",
-    desc: "A confident financial brand built around clarity, motion, and trust — from logo system to product UI.",
+    n: "01",
+    title: "Frontend engineering",
+    desc: "React / TypeScript interfaces, routing, animation, and state that stay understandable as products grow.",
     img: work1
   },
   {
-    tag: "Development",
-    title: "Photolab — Visual Storytelling Site",
-    desc: "A high-performance editorial platform built to showcase imagery with cinematic transitions and butter-smooth scroll.",
+    n: "02",
+    title: "APIs & integrations",
+    desc: "REST and client-side data layers, auth flows, and third-party services wired safely into the UI.",
+    img: work2
+  },
+  {
+    n: "03",
+    title: "UI implementation",
+    desc: "Figma to code with spacing, motion, and components that match the design system — without fragile hacks.",
+    img: work3
+  },
+  {
+    n: "04",
+    title: "Performance & quality",
+    desc: "Lazy loading, bundle discipline, accessibility checks, and polish so launches feel fast on real devices.",
+    img: work3
+  }
+];
+function Services() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "services", className: "relative px-6 pt-24 md:pt-32 pb-8 max-w-[1232px] mx-auto", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: "hidden",
+        whileInView: "show",
+        viewport: scrollViewport,
+        variants: stagger(0.1),
+        className: "flex items-center gap-2 mb-8",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-3 h-3 rounded-full bg-[#F00862] shrink-0", "aria-hidden": true }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[15px] uppercase text-white font-sans leading-[19.2px]", children: "What I do" })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.h2,
+      {
+        initial: "hidden",
+        whileInView: "show",
+        viewport: scrollViewport,
+        variants: fadeUp,
+        className: "font-display uppercase text-gradient-display text-[clamp(2rem,5vw,72px)] leading-[1.08] md:leading-[115.2px] max-w-[1100px]",
+        children: [
+          "FROM PROTOTYPE",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+          "TO PRODUCTION"
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.ul,
+      {
+        initial: "hidden",
+        whileInView: "show",
+        viewport: scrollViewport,
+        variants: stagger(0.08),
+        className: "mt-10 md:mt-12 flex flex-col gap-6",
+        children: services.map((s) => /* @__PURE__ */ jsxRuntimeExports.jsx(motion.li, { variants: fadeUp, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "a",
+          {
+            href: "#contact",
+            className: "group block rounded-2xl border border-[#272828] bg-[oklch(0.07_0.02_280)] p-6 md:p-8 hover:border-white/25 transition-colors",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-6 md:gap-8 items-center", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-6 md:gap-8 min-w-0", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-3 h-3 rounded-full bg-[#F00862]", "aria-hidden": true }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-sans text-[19.7px] text-white tabular-nums", children: s.n })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-sans uppercase text-white text-[clamp(1.5rem,3.5vw,2.35rem)] leading-tight tracking-tight", children: s.title })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid sm:grid-cols-[minmax(0,220px)_1fr] gap-5 items-center", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "aspect-[4/3] rounded-lg overflow-hidden border border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: s.img, alt: "", loading: "lazy", className: "w-full h-full object-cover group-hover:scale-105 transition duration-700" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-foreground/75 font-sans text-base leading-relaxed", children: s.desc })
+              ] })
+            ] })
+          }
+        ) }, s.n))
+      }
+    )
+  ] });
+}
+const projects = [
+  {
+    tag: "Product UI",
+    title: "SaaS dashboard — analytics & billing",
+    desc: "Role: lead frontend. Dense tables, filters, and charts with optimistic updates and accessible keyboard flows — shipped for a small product team.",
+    img: work2
+  },
+  {
+    tag: "Marketing site",
+    title: "Founder landing — motion & storytelling",
+    desc: "Role: design + build. Scroll-driven narrative, CMS-friendly sections, and performance budget so Lighthouse stayed in the green.",
+    img: work1
+  },
+  {
+    tag: "Design system",
+    title: "Component library — tokens to code",
+    desc: "Role: implementation partner. Mapped tokens to CSS variables, documented patterns, and cut duplicate UI work for the next two releases.",
     img: work3
   }
 ];
@@ -371,7 +540,7 @@ function HighlightedProjects() {
     target: containerRef,
     offset: ["start start", "end end"]
   });
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative px-6 pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24 max-w-[1400px] mx-auto", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "projects", className: "relative px-6 pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24 max-w-[1232px] mx-auto", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       motion.div,
       {
@@ -379,7 +548,7 @@ function HighlightedProjects() {
         whileInView: "show",
         viewport: { ...scrollViewport, once: true },
         variants: stagger(0.12),
-        className: "text-center mb-20 md:mb-28",
+        className: "text-center",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             motion.p,
@@ -392,16 +561,12 @@ function HighlightedProjects() {
               ]
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
             motion.h2,
             {
               variants: fadeUp,
-              className: "font-display uppercase font-black leading-[0.9] text-foreground",
-              style: { fontSize: "clamp(3rem, 9vw, 9rem)" },
-              children: [
-                "Highlighted ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient", children: "Projects" })
-              ]
+              className: "font-display uppercase font-normal leading-[1.08] text-gradient-display max-w-[1100px] mx-auto [text-wrap:balance]",
+              children: "HIGHLIGHTED PROJECTS"
             }
           )
         ]
@@ -527,9 +692,9 @@ function ProjectCard({
   );
 }
 const stats = [
-  { value: "120+", label: "Projects delivered across digital and brand experiences" },
-  { value: "35+", label: "Industries supported through strategic design solutions" },
-  { value: "12", label: "Years of hands-on experience shaping meaningful identities" }
+  { value: "40+", label: "Shipped interfaces — from marketing sites to product dashboards" },
+  { value: "8+", label: "Years writing production TypeScript and React" },
+  { value: "1:1", label: "How I work with you — direct updates, no account-manager telephone game" }
 ];
 function Stats() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -539,25 +704,23 @@ function Stats() {
       whileInView: "show",
       viewport: scrollViewport,
       variants: stagger(0.12),
-      className: "relative px-6 py-24 md:py-32 lg:py-40 max-w-[1400px] mx-auto",
+      className: "relative px-6 py-24 md:py-32 max-w-[1232px] mx-auto",
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "text-sm uppercase tracking-widest text-foreground/60 mb-8 md:mb-10", children: "— Milestones" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.p, { variants: fadeUp, className: "flex items-center gap-2 text-sm uppercase tracking-widest text-foreground/70 mb-8 md:mb-10", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-magenta shrink-0", "aria-hidden": true }),
+          "Proof points"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
           motion.h2,
           {
             variants: fadeUp,
-            className: "font-display uppercase font-black leading-[0.9] text-foreground max-w-5xl",
-            style: { fontSize: "clamp(2.5rem, 6vw, 6rem)" },
-            children: [
-              "Creativity with ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient", children: "real-world" }),
-              " results"
-            ]
+            className: "font-display uppercase font-black leading-[1.08] max-w-5xl text-gradient-display",
+            children: "BUILDING WITH CLARITY & CRAFT"
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-16 md:mt-24 grid md:grid-cols-3 gap-10 md:gap-12", children: stats.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { variants: fadeUp, className: "glass rounded-3xl p-8 md:p-10", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-16 md:mt-24 grid md:grid-cols-3 gap-10 md:gap-12", children: stats.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { variants: fadeUp, className: "glass rounded-3xl p-8 md:p-10 border border-white/10", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-sans font-bold text-7xl md:text-8xl text-gradient tabular-nums", children: s.value }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-8 text-foreground/70 leading-relaxed", children: s.label })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-8 text-foreground/70 leading-relaxed font-sans", children: s.label })
         ] }, i)) })
       ]
     }
@@ -574,13 +737,13 @@ const testimonials = [
     img: t1
   },
   {
-    quote: "From the first call to the final handoff, the team brought clarity and craft to every detail. Our brand finally feels like ourselves — confident, modern, and unmistakably us.",
+    quote: "From the first call to the final handoff, Goran brought clarity and craft to every detail. Our brand finally feels like ourselves — confident, modern, and unmistakably us.",
     name: "Sara Lindqvist",
     role: "Head of Brand, Nordlys Studio",
     img: t2
   },
   {
-    quote: "Strategy, design, and motion all moving in the same direction. The launch performed beyond our targets and the visual system still feels fresh months later.",
+    quote: "Strategy, UX, and frontend execution all moved in the same direction. The launch performed beyond our targets and the interface still feels fast months later.",
     name: "Marko Petrov",
     role: "CEO, Helix Labs",
     img: t3
@@ -747,63 +910,44 @@ function Footer() {
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute -left-32 top-1/3 w-[420px] h-[420px] rounded-full bg-magenta/25 blur-[140px]" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pointer-events-none absolute -right-32 bottom-10 w-[460px] h-[460px] rounded-full bg-electric/25 blur-[150px]" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative max-w-[1400px] mx-auto", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative max-w-[1232px] mx-auto", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-3 gap-10 md:gap-12 pb-12 md:pb-14 border-b border-white/10", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground/70 mb-2", children: "Call Today" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
-                {
-                  href: "tel:+12456567987",
-                  className: "text-magenta text-lg md:text-xl hover:opacity-80 transition",
-                  children: "+12 456 567 987"
-                }
-              )
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground/70 mb-2 font-sans", children: "Call" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "tel:+0000000000", className: "text-magenta text-lg md:text-xl hover:opacity-80 transition font-sans", children: "+00 000 000 000" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-xs text-foreground/50 font-sans", children: "Replace with your number" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:text-center", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground/70 mb-2", children: "Email" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground/70 mb-2 font-sans", children: "Email" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "a",
                 {
-                  href: "mailto:hello@boldonse.com",
-                  className: "text-magenta text-lg md:text-xl hover:opacity-80 transition",
-                  children: "hello@boldonse.com"
+                  href: "mailto:hello@example.com",
+                  className: "text-magenta text-lg md:text-xl hover:opacity-80 transition font-sans",
+                  children: "hello@example.com"
                 }
-              )
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-xs text-foreground/50 font-sans", children: "Swap for your real address" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:text-right", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground/70 mb-2", children: "Admin" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
-                {
-                  href: "mailto:support@boldonse.com",
-                  className: "text-magenta text-lg md:text-xl hover:opacity-80 transition",
-                  children: "support@boldonse.com"
-                }
-              )
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground/70 mb-2 font-sans", children: "Availability" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-magenta text-lg md:text-xl font-sans", children: "Freelance / contract" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-xs text-foreground/50 font-sans", children: "EU timezones" })
             ] })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-20 md:py-28 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "h2",
-            {
-              className: "font-display uppercase font-black leading-[0.85] text-foreground text-center",
-              style: { fontSize: "clamp(4rem, 18vw, 18rem)", letterSpacing: "-0.03em" },
-              children: "LET'S–TALK"
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-8 border-t border-white/10 grid md:grid-cols-3 gap-6 items-center text-sm text-foreground/70", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Designed by Wroney Powerd by Webflow" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", "aria-label": "Facebook", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Facebook, { className: "w-5 h-5" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", "aria-label": "Instagram", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Instagram, { className: "w-5 h-5" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", "aria-label": "X", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Twitter, { className: "w-5 h-5" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", "aria-label": "LinkedIn", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "w-5 h-5" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "py-20 md:py-28 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display uppercase font-black leading-[1.08] text-foreground text-center tracking-tight text-gradient-display", children: "LET'S TALK" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-8 border-t border-white/10 grid md:grid-cols-3 gap-6 items-center text-sm text-foreground/70 font-sans", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              "© ",
+              (/* @__PURE__ */ new Date()).getFullYear(),
+              " Goran Šantić — freelance developer"
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "flex md:justify-end gap-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "underline underline-offset-4 hover:text-foreground transition", children: "License" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "underline underline-offset-4 hover:text-foreground transition", children: "Styleguide" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "underline underline-offset-4 hover:text-foreground transition", children: "Chancelog" }) })
-            ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-center gap-6", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://github.com/", target: "_blank", rel: "noopener noreferrer", "aria-label": "GitHub", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "w-5 h-5" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.linkedin.com/", target: "_blank", rel: "noopener noreferrer", "aria-label": "LinkedIn", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "w-5 h-5" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "https://www.instagram.com/", target: "_blank", rel: "noopener noreferrer", "aria-label": "Instagram", className: "hover:text-foreground transition", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Instagram, { className: "w-5 h-5" }) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "flex md:justify-end gap-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#top", className: "underline underline-offset-4 hover:text-foreground transition", children: "Back to top" }) }) })
           ] })
         ] })
       ]
@@ -817,6 +961,7 @@ function Index() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(About, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Marquee, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(OurWorks, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Services, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(HighlightedProjects, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Stats, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Testimonial, {}),

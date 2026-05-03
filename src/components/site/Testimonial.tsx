@@ -16,14 +16,14 @@ const testimonials = [
   },
   {
     quote:
-      "From the first call to the final handoff, the team brought clarity and craft to every detail. Our brand finally feels like ourselves — confident, modern, and unmistakably us.",
+      "From the first call to the final handoff, Goran brought clarity and craft to every detail. Our brand finally feels like ourselves — confident, modern, and unmistakably us.",
     name: "Sara Lindqvist",
     role: "Head of Brand, Nordlys Studio",
     img: t2,
   },
   {
     quote:
-      "Strategy, design, and motion all moving in the same direction. The launch performed beyond our targets and the visual system still feels fresh months later.",
+      "Strategy, UX, and frontend execution all moved in the same direction. The launch performed beyond our targets and the interface still feels fast months later.",
     name: "Marko Petrov",
     role: "CEO, Helix Labs",
     img: t3,

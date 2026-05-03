@@ -13,7 +13,7 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-Cjj5LIqF.css";
+const appCss = "/assets/styles-Cmv3WwnR.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -34,14 +34,14 @@ const Route$1 = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Goran Šantić — Freelance developer" },
+      { name: "description", content: "Freelance developer — UI, UX, and production-ready frontends." },
+      { name: "author", content: "Goran Šantić" },
+      { property: "og:title", content: "Goran Šantić — Freelance developer" },
+      { property: "og:description", content: "Freelance developer — UI, UX, and production-ready frontends." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" }
+      { name: "twitter:site", content: "@goranche92" }
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -69,7 +69,7 @@ function RootShell({ children }) {
 function RootComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
 }
-const $$splitComponentImporter = () => import("./index-B-SVemel.mjs");
+const $$splitComponentImporter = () => import("./index-b9W-GXJo.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
