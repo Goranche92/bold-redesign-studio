@@ -24,7 +24,7 @@ export function Hero() {
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.h1
           variants={fadeUp}
-          className="font-display uppercase font-black flex flex-col gap-[100px] tracking-[2.1px] max-md:gap-12 max-md:text-[clamp(2.75rem,11vw,4.25rem)] max-md:leading-[1.08] md:text-[104px] md:leading-[208px]"
+          className="font-display uppercase font-black flex flex-col gap-[100px] !tracking-[2.1px] max-md:text-[clamp(2.75rem,11vw,4.25rem)] max-md:leading-[1.08] md:text-[104px] md:leading-[208px]"
         >
           <span className="flex items-center gap-6 flex-wrap text-white">
             Creative
@@ -33,19 +33,21 @@ export function Hero() {
           <span className="block text-gradient">Developer</span>
         </motion.h1>
 
-        <div className="mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end">
-          <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md leading-relaxed">
-            I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail.
-          </motion.p>
+        <div className="mt-[80px] flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-[36px] w-full lg:flex-1 lg:justify-center">
+            <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md leading-relaxed text-center sm:text-left">
+              I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail.
+            </motion.p>
 
-          <motion.div variants={scaleIn} className="flex justify-center">
-            <a href="#contact" className="flex items-center gap-3 bg-foreground text-primary-foreground pl-8 pr-2 py-2 rounded-full text-base font-medium hover:scale-105 transition-transform">
-              LET'S TALK
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white">✕</span>
-            </a>
-          </motion.div>
+            <motion.div variants={scaleIn} className="flex shrink-0">
+              <a href="#contact" className="flex items-center gap-3 bg-foreground text-primary-foreground pl-8 pr-2 py-2 rounded-full text-base font-medium hover:scale-105 transition-transform">
+                LET'S TALK
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[oklch(0.65_0.32_340)] to-[oklch(0.55_0.28_255)] text-white">✕</span>
+              </a>
+            </motion.div>
+          </div>
 
-          <motion.ul variants={fadeRight} className="space-y-3 md:text-right text-foreground/90">
+          <motion.ul variants={fadeRight} className="space-y-3 text-center lg:text-right text-foreground/90 w-full lg:w-auto shrink-0">
             {["Facebook", "Linkedin", "Instagram"].map((s) => (
               <li key={s}>
                 <a href="#" className="inline-flex items-center gap-2 hover:text-foreground/60 transition">
