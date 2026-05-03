@@ -1,5 +1,5 @@
-import { c as createRouter, a as createRootRoute, b as createFileRoute, l as lazyRouteComponent, H as HeadContent, S as Scripts, O as Outlet } from "../_libs/tanstack__react-router.mjs";
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
+import { c as createRouter, a as createRootRoute, b as createFileRoute, l as lazyRouteComponent, H as HeadContent, S as Scripts, O as Outlet } from "../_libs/tanstack__react-router.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -13,18 +13,28 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-CugTGhx9.css";
+const appCss = "/assets/styles-B04DBBGg.css";
 function NotFoundComponent() {
   return null;
 }
+const fontCss = "https://fonts.googleapis.com/css2?family=Boldonse&family=Inter+Tight:ital,opsz,wght@0,14..32,400;0,14..32,500;1,14..32,400&display=swap";
 const Route$1 = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: " " }
+      { title: "Boldonse — Creative design studio" },
+      {
+        name: "description",
+        content: "Creative design studio — branding, UI/UX, and development. Design that means something."
+      }
     ],
-    links: [{ rel: "stylesheet", href: appCss }]
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: fontCss }
+    ]
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -42,7 +52,7 @@ function RootShell({ children }) {
 function RootComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
 }
-const $$splitComponentImporter = () => import("./index-CCmKtCOw.mjs");
+const $$splitComponentImporter = () => import("./index-DvrZnR4b.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -51,7 +61,7 @@ const Route = createFileRoute("/")({
       name: "viewport",
       content: "width=device-width, initial-scale=1"
     }, {
-      title: " "
+      title: "Boldonse — Creative design studio"
     }]
   }),
   component: lazyRouteComponent($$splitComponentImporter, "component")
@@ -66,7 +76,10 @@ const rootRouteChildren = {
 };
 const routeTree = Route$1._addFileChildren(rootRouteChildren)._addFileTypes();
 function DefaultErrorComponent() {
-  return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen bg-[#04070A] px-6 py-16 text-white", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "font-display text-2xl tracking-wide", children: "Something went wrong" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 max-w-lg text-sm text-white/70", children: "Please refresh the page or try again later." })
+  ] });
 }
 const getRouter = () => {
   const router = createRouter({

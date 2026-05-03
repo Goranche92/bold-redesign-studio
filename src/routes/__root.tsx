@@ -6,14 +6,27 @@ function NotFoundComponent() {
   return null;
 }
 
+const fontCss =
+  "https://fonts.googleapis.com/css2?family=Boldonse&family=Inter+Tight:ital,opsz,wght@0,14..32,400;0,14..32,500;1,14..32,400&display=swap";
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "\u00a0" },
+      { title: "Boldonse — Creative design studio" },
+      {
+        name: "description",
+        content:
+          "Creative design studio — branding, UI/UX, and development. Design that means something.",
+      },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: fontCss },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

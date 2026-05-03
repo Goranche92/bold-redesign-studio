@@ -1,0 +1,27 @@
+/** Figma MCP export — URLs expire (~7 days); re-export from Figma if images break. */
+export const figma = {
+  heroBgA: "https://www.figma.com/api/mcp/asset/e965eb2d-179c-423e-aa04-a83d7e497f53",
+  heroBgB: "https://www.figma.com/api/mcp/asset/636af594-4930-4e55-863b-111119543663",
+  seeProjectsBadge: "https://www.figma.com/api/mcp/asset/16ffe5cb-6dfd-4318-be4d-3b127ad14e55",
+  aboutShape: "https://www.figma.com/api/mcp/asset/9851865b-c308-48d2-b47c-316835039697",
+  workGrid1: "https://www.figma.com/api/mcp/asset/905e4972-3a66-4395-aaa9-6387fec75aa4",
+  workGrid2: "https://www.figma.com/api/mcp/asset/efa03e4c-7726-43f7-8180-b82aef3820d6",
+  workGrid3: "https://www.figma.com/api/mcp/asset/13aaad85-549c-4593-93b0-5e0f19e84818",
+  workGrid4: "https://www.figma.com/api/mcp/asset/1dcf0f39-7724-479e-93fd-269a5c79aaa7",
+  workGrid5: "https://www.figma.com/api/mcp/asset/1dcf0f39-7724-479e-93fd-269a5c79aaa7",
+  workGrid6: "https://www.figma.com/api/mcp/asset/c34418e6-b7f0-4571-9bed-ae359decc784",
+  serviceRowBg: "https://www.figma.com/api/mcp/asset/f36bed66-a15f-4df6-9a09-273e62adf543",
+  serviceThumb1: "https://www.figma.com/api/mcp/asset/8f4fe64c-2b00-42bf-94ba-958e5b64858f",
+  serviceThumb2: "https://www.figma.com/api/mcp/asset/bb3ee276-4bbb-45c3-bcdd-83db5c1b9935",
+  serviceThumb3: "https://www.figma.com/api/mcp/asset/6bcaad6d-b36b-4988-8f83-6af2bbc35125",
+  serviceThumb4: "https://www.figma.com/api/mcp/asset/8f4fe64c-2b00-42bf-94ba-958e5b64858f",
+  project1: "https://www.figma.com/api/mcp/asset/1b31d463-50b3-4e08-91af-774880f1f268",
+  project2: "https://www.figma.com/api/mcp/asset/836fe333-71df-4338-9d7e-bb5e510b86bc",
+  project3: "https://www.figma.com/api/mcp/asset/13343761-f126-4672-a8f2-9440056671be",
+  statsBg: "https://www.figma.com/api/mcp/asset/9202d4f6-0d9f-4f7e-bf8a-6f1c928fc98d",
+  testimonialBg: "https://www.figma.com/api/mcp/asset/f506bed9-edfa-46ce-a532-6338bd791c63",
+  footerBg: "https://www.figma.com/api/mcp/asset/60423d54-4c45-4cd3-96ca-cb9b7a375c5f",
+  navLogoMark: "https://www.figma.com/api/mcp/asset/70e8ffe6-d0ef-4d2a-9a1c-069993360013",
+  /** Marquee strip logo mark (Component variant 4 in Figma) */
+  marqueeLogo: "https://www.figma.com/api/mcp/asset/6813add5-5f71-4234-b79b-765a1761340f",
+} as const;
