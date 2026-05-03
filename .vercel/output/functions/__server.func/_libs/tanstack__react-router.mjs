@@ -1082,7 +1082,6 @@ var renderRouterToStream = async ({ request, router, responseHeaders, children }
 };
 export {
   HeadContent as H,
-  Link as L,
   Outlet as O,
   RouterProvider as R,
   Scripts as S,
@@ -1090,6 +1089,5 @@ export {
   createFileRoute as b,
   createRouter as c,
   lazyRouteComponent as l,
-  renderRouterToStream as r,
-  useRouter as u
+  renderRouterToStream as r
 };
