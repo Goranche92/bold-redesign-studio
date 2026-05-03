@@ -24,17 +24,17 @@ export function Hero() {
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.h1
           variants={fadeUp}
-          className="font-display uppercase font-black leading-[0.85] text-foreground"
+          className="font-display uppercase font-black leading-[0.85] text-foreground flex flex-col gap-5 md:gap-8"
           style={{ fontSize: "clamp(4rem, 14vw, 14rem)" }}
         >
           <span className="flex items-center gap-6 flex-wrap">
             Creative
             <SeeProjectsBadge />
           </span>
-          <span className="block text-gradient">Developer</span>
+          <span className="block text-gradient pt-1 md:pt-2">Developer</span>
         </motion.h1>
 
-        <div className="mt-20 md:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end">
+        <div className="mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end">
           <motion.p variants={fadeUpSm} className="text-foreground/80 text-lg max-w-md leading-relaxed">
             I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail.
           </motion.p>

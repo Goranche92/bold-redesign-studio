@@ -1,6 +1,6 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { m as motion, u as useScroll, A as AnimatePresence, a as useTransform, b as useReducedMotion } from "../_libs/framer-motion.mjs";
+import { m as motion, u as useScroll, a as useTransform, A as AnimatePresence, b as useReducedMotion } from "../_libs/framer-motion.mjs";
 import { A as ArrowLeft, a as ArrowRight, F as Facebook, I as Instagram, T as Twitter, L as Linkedin } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
@@ -109,18 +109,18 @@ function Hero() {
             motion.h1,
             {
               variants: fadeUp,
-              className: "font-display uppercase font-black leading-[0.85] text-foreground",
+              className: "font-display uppercase font-black leading-[0.85] text-foreground flex flex-col gap-5 md:gap-8",
               style: { fontSize: "clamp(4rem, 14vw, 14rem)" },
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-6 flex-wrap", children: [
                   "Creative",
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SeeProjectsBadge, {})
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-gradient", children: "Developer" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-gradient pt-1 md:pt-2", children: "Developer" })
               ]
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-20 md:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-3 gap-12 md:gap-14 items-end", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUpSm, className: "text-foreground/80 text-lg max-w-md leading-relaxed", children: "I help teams and founders ship interfaces that feel as good as they look — from UX and design systems to modern frontends, with a focus on performance and detail." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: scaleIn, className: "flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#contact", className: "flex items-center gap-3 bg-foreground text-primary-foreground pl-8 pr-2 py-2 rounded-full text-base font-medium hover:scale-105 transition-transform", children: [
               "LET'S TALK",
@@ -158,13 +158,13 @@ function About() {
       variants: stagger(0.15),
       className: "relative px-6 py-24 md:py-32 lg:py-40 max-w-[1400px] mx-auto",
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "text-sm uppercase tracking-widest text-foreground/60 mb-8 md:mb-10", children: "— About" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-12 gap-12 md:gap-16 items-end", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "text-sm uppercase tracking-widest text-foreground/60 mb-10 md:mb-14", children: "— About" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-12 gap-12 md:gap-x-16 md:gap-y-20 items-end", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             motion.h2,
             {
               variants: fadeUp,
-              className: "md:col-span-8 font-display uppercase font-black leading-[0.9] text-foreground",
+              className: "md:col-span-8 font-display uppercase font-black leading-[1.02] tracking-tight text-foreground [text-wrap:balance]",
               style: { fontSize: "clamp(2.5rem, 7vw, 7rem)" },
               children: [
                 "Design & code that ",
@@ -175,7 +175,7 @@ function About() {
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: scaleIn, className: "md:col-span-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: work1, alt: "Iridescent abstract sculpture", loading: "lazy", className: "w-full rounded-3xl glow" }) })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "mt-14 md:mt-16 max-w-2xl text-lg md:text-xl text-foreground/80 leading-relaxed", children: "I'm Goran — a freelance developer and designer. I partner directly with clients on products and marketing sites: UX flows, UI craft, design systems, and production-ready frontends. No agency overhead — just clear communication, fast iteration, and work meant to ship." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.p, { variants: fadeUp, className: "mt-16 md:mt-20 max-w-2xl text-lg md:text-xl text-foreground/80 leading-relaxed", children: "I'm Goran — a freelance developer and designer. I partner directly with clients on products and marketing sites: UX flows, UI craft, design systems, and production-ready frontends. No agency overhead — just clear communication, fast iteration, and work meant to ship." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.a, { variants: fadeUp, href: "#contact", className: "mt-10 md:mt-12 inline-flex items-center gap-3 text-foreground hover:text-accent transition", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: "Let's talk" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-flex w-10 h-10 items-center justify-center rounded-full border border-white/20", children: "↗" })
@@ -202,20 +202,30 @@ const works = [
   { n: "05", tag: "Illustration", title: "Kairo", year: "2024", img: work1 },
   { n: "06", tag: "Web Design", title: "Nebula", year: "2023", img: work3 }
 ];
+const rows = [
+  [works[0], works[1]],
+  [works[2], works[3]],
+  [works[4], works[5]]
+];
 function OurWorks() {
   const containerRef = reactExports.useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
+  const gridY = useTransform(scrollYProgress, [0, 1], ["14vh", "-28vh"]);
+  const rowY0 = useTransform(scrollYProgress, [0, 1], ["0%", "-5%"]);
+  const rowY1 = useTransform(scrollYProgress, [0, 1], ["2%", "-10%"]);
+  const rowY2 = useTransform(scrollYProgress, [0, 1], ["4%", "-15%"]);
+  const rowYs = [rowY0, rowY1, rowY2];
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "section",
     {
       ref: containerRef,
-      className: "relative px-6 py-8 md:py-12",
+      className: "relative px-6 py-10 md:py-14",
       "aria-label": "Our Works",
-      style: { height: `${(works.length + 1) * 95}vh` },
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 h-screen w-full overflow-hidden flex flex-col isolate", children: [
+      style: { height: "420vh" },
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "sticky top-0 min-h-screen w-full overflow-hidden flex flex-col isolate py-6 md:py-10", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
@@ -224,12 +234,14 @@ function OurWorks() {
             style: { backgroundImage: `url(${heroBg})` }
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-background/80 backdrop-blur-[2px]" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-gradient-to-b from-background/95 via-background/88 to-background/95" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 bg-black/55" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 -z-10 backdrop-blur-[2px]" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 z-0 flex items-center justify-center pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           "h2",
           {
-            className: "font-display uppercase font-black text-foreground/[0.07] whitespace-nowrap select-none",
-            style: { fontSize: "clamp(8rem, 22vw, 22rem)", letterSpacing: "-0.04em" },
+            className: "font-display uppercase font-black text-foreground/[0.06] whitespace-nowrap select-none",
+            style: { fontSize: "clamp(6rem, 18vw, 18rem)", letterSpacing: "-0.04em" },
             children: "DESIGN BUILT"
           }
         ) }),
@@ -240,7 +252,7 @@ function OurWorks() {
             whileInView: "show",
             viewport: scrollViewport,
             variants: stagger(0.1),
-            className: "pt-12 md:pt-20 pb-6 md:pb-8 text-center relative z-10",
+            className: "text-center relative z-10 shrink-0 pb-6 md:pb-8",
             children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
               motion.p,
               {
@@ -254,85 +266,49 @@ function OurWorks() {
             )
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 flex-1 w-full max-w-[1400px] mx-auto", children: works.map((w, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          WorkCard,
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
           {
-            work: w,
-            index: i,
-            total: works.length,
-            progress: scrollYProgress
-          },
-          w.n
-        )) })
+            style: { y: gridY },
+            className: "relative z-10 flex-1 flex items-center w-full max-w-[1400px] mx-auto px-1 md:px-2",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full flex flex-col gap-8 md:gap-10 lg:gap-12", children: rows.map((row, ri) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                style: { y: rowYs[ri] },
+                className: "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8",
+                children: row.map((w) => /* @__PURE__ */ jsxRuntimeExports.jsx(WorkCard, { work: w }, w.n))
+              },
+              ri
+            )) })
+          }
+        )
       ] })
     }
   );
 }
-function WorkCard({
-  work,
-  index,
-  total,
-  progress
-}) {
-  const zone = 1 / (total + 1);
-  const enterStart = index * zone;
-  const settleAt = (index + 0.6) * zone;
-  const exitStart = (index + 1.2) * zone;
-  const exitEnd = (index + 2) * zone;
-  const isFirst = index === 0;
-  const y = useTransform(
-    progress,
-    [enterStart, settleAt, exitStart, exitEnd],
-    [isFirst ? 0 : 100, 0, 0, -110]
-  );
-  const opacity = useTransform(
-    progress,
-    [enterStart, settleAt, exitStart, exitEnd],
-    [isFirst ? 1 : 0, 1, 1, 0]
-  );
-  const scale = useTransform(
-    progress,
-    [enterStart, settleAt, exitStart, exitEnd],
-    [0.92, 1, 1, 0.96]
-  );
-  const isLeft = index % 2 === 0;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.article,
-    {
-      style: { y, opacity, scale },
-      className: `absolute top-[8vh] md:top-[10vh] w-[88%] sm:w-[64%] md:w-[46%] lg:w-[42%] aspect-[5/4] rounded-3xl overflow-hidden bg-card border border-white/15 shadow-2xl ring-1 ring-white/[0.06] ${isLeft ? "left-0 md:left-[2%]" : "right-0 md:right-[2%]"}`,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "img",
-          {
-            src: work.img,
-            alt: work.title,
-            loading: "lazy",
-            className: "w-full h-full object-cover"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 p-6 md:p-8 flex flex-col justify-between", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-xs uppercase tracking-widest text-foreground/80", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-              work.n,
-              " — ",
-              work.tag
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: work.year })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "h3",
-            {
-              className: "font-display uppercase leading-[0.9] text-foreground",
-              style: { fontSize: "clamp(2rem, 4vw, 4rem)" },
-              children: work.title
-            }
-          )
-        ] })
-      ]
-    }
-  );
+function WorkCard({ work }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("article", { className: "relative aspect-[5/4] rounded-3xl overflow-hidden bg-card border border-white/15 shadow-2xl ring-1 ring-white/[0.06]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: work.img, alt: work.title, loading: "lazy", className: "w-full h-full object-cover" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 p-5 md:p-7 flex flex-col justify-between", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-xs uppercase tracking-widest text-foreground/80", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+          work.n,
+          " — ",
+          work.tag
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: work.year })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "h3",
+        {
+          className: "font-display uppercase leading-[0.9] text-foreground",
+          style: { fontSize: "clamp(1.5rem, 3.5vw, 3rem)" },
+          children: work.title
+        }
+      )
+    ] })
+  ] });
 }
 const projects = [
   {
@@ -410,7 +386,7 @@ function HighlightedProjects() {
       {
         ref: containerRef,
         className: "relative [perspective:1800px] [perspective-origin:50%_0%]",
-        style: { paddingBottom: "min(48vh, 520px)" },
+        style: { paddingBottom: "min(36vh, 380px)" },
         children: projects.map((p, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           ProjectCard,
           {
@@ -439,6 +415,7 @@ function ProjectCard({
   const scale = useTransform(stack, [0, 1], [1, 0.86]);
   const opacity = useTransform(stack, [0, 1], [1, 0.48]);
   const rotateX = useTransform(stack, [0, 1], [0, -10]);
+  const rotateY = useTransform(stack, [0, 1], [0, index % 2 === 0 ? 10 : -10]);
   const y = useTransform(stack, [0, 1], [0, -14]);
   const z = useTransform(stack, [0, 1], [0, -80]);
   const rimOpacity = useTransform(stack, [0, 1], [0, 0.55]);
@@ -449,8 +426,8 @@ function ProjectCard({
     {
       className: "sticky flex justify-center",
       style: {
-        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 4.5rem) + ${index * 36}px)`,
-        marginBottom: isLast ? "min(50vh, 560px)" : "min(78vh, 820px)",
+        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 4.5rem) + ${index * 18}px)`,
+        marginBottom: isLast ? "min(38vh, 400px)" : "min(52vh, 540px)",
         zIndex: 10 + index
       },
       children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -460,6 +437,7 @@ function ProjectCard({
             scale: reduce ? 1 : scale,
             opacity: reduce ? 1 : opacity,
             rotateX: reduce ? 0 : rotateX,
+            rotateY: reduce ? 0 : rotateY,
             y: reduce ? 0 : y,
             translateZ: reduce ? 0 : z,
             transformStyle: "preserve-3d",

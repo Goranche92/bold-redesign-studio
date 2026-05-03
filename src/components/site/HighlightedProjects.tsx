@@ -82,7 +82,7 @@ export function HighlightedProjects() {
       <div
         ref={containerRef}
         className="relative [perspective:1800px] [perspective-origin:50%_0%]"
-        style={{ paddingBottom: "min(48vh, 520px)" }}
+        style={{ paddingBottom: "min(36vh, 380px)" }}
       >
         {projects.map((p, i) => (
           <ProjectCard
@@ -120,6 +120,7 @@ function ProjectCard({
   const scale = useTransform(stack, [0, 1], [1, 0.86]);
   const opacity = useTransform(stack, [0, 1], [1, 0.48]);
   const rotateX = useTransform(stack, [0, 1], [0, -10]);
+  const rotateY = useTransform(stack, [0, 1], [0, index % 2 === 0 ? 10 : -10]);
   const y = useTransform(stack, [0, 1], [0, -14]);
   const z = useTransform(stack, [0, 1], [0, -80]);
   const rimOpacity = useTransform(stack, [0, 1], [0, 0.55]);
@@ -131,8 +132,8 @@ function ProjectCard({
     <div
       className="sticky flex justify-center"
       style={{
-        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 4.5rem) + ${index * 36}px)`,
-        marginBottom: isLast ? "min(50vh, 560px)" : "min(78vh, 820px)",
+        top: `calc(max(5rem, env(safe-area-inset-top, 0px) + 4.5rem) + ${index * 18}px)`,
+        marginBottom: isLast ? "min(38vh, 400px)" : "min(52vh, 540px)",
         zIndex: 10 + index,
       }}
     >
@@ -141,6 +142,7 @@ function ProjectCard({
           scale: reduce ? 1 : scale,
           opacity: reduce ? 1 : opacity,
           rotateX: reduce ? 0 : rotateX,
+          rotateY: reduce ? 0 : rotateY,
           y: reduce ? 0 : y,
           translateZ: reduce ? 0 : z,
           transformStyle: "preserve-3d",
