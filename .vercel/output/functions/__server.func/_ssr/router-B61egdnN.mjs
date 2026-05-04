@@ -22,7 +22,7 @@ const me = {
   githubUrl: "https://github.com/Goranche92",
   githubHandle: "Goranche92"
 };
-const appCss = "/assets/styles-D_SMyXFV.css";
+const appCss = "/assets/styles-BdHazqm6.css";
 function NotFoundComponent() {
   return null;
 }
@@ -61,7 +61,7 @@ function RootShell({ children }) {
 function RootComponent() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
 }
-const $$splitComponentImporter = () => import("./index-l2R1VGOs.mjs");
+const $$splitComponentImporter = () => import("./index-Dxn-i7Rf.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
