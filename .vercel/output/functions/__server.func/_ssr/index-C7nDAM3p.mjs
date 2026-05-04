@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { m as me } from "./router-B61egdnN.mjs";
+import { m as me } from "./router-C9K2bXQ5.mjs";
 import { C as ChevronDown, A as ArrowUpRight, a as ArrowLeft, b as ArrowRight, F as Facebook, I as Instagram, L as Linkedin } from "../_libs/lucide-react.mjs";
 import { u as useReducedMotion, m as motion } from "../_libs/framer-motion.mjs";
 import "../_libs/tanstack__react-router.mjs";
@@ -24,20 +24,20 @@ function LandingAbout() {
     "section",
     {
       id: "about",
-      className: "flex w-full flex-col items-center px-6 py-[80px] md:px-12 xl:px-[344px]",
-      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto flex w-full max-w-[1232px] flex-col items-center gap-10 min-[1232px]:block min-[1232px]:h-[571.61px] min-[1232px]:gap-0", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "order-1 flex shrink-0 items-center justify-center gap-2 min-[1232px]:absolute min-[1232px]:left-1/2 min-[1232px]:top-0 min-[1232px]:-translate-x-1/2", children: [
+      className: "flex w-full flex-col items-center px-4 py-12 sm:px-6 sm:py-16 md:px-12 md:py-[80px] xl:px-[344px]",
+      children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex w-full max-w-[1232px] flex-col items-center text-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6 flex shrink-0 items-center justify-center gap-2 md:mb-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "size-3 shrink-0 rounded-full bg-[#f00862]", "aria-hidden": true }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[16px] leading-[19.2px] uppercase", children: "About me" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "order-2 w-full min-[1232px]:absolute min-[1232px]:left-[113px] min-[1232px]:top-[19.2px] min-[1232px]:pt-[31.1px]", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto flex w-full max-w-[1006px] flex-col items-center px-4 pb-20 min-[1232px]:px-0 min-[1232px]:pb-[120px] min-[1232px]:pl-[92.52px] min-[1232px]:pr-[92.53px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display flex flex-col items-center gap-0 text-center text-[clamp(2.25rem,6vw,4.5rem)] font-normal leading-[1.15] uppercase min-[1232px]:text-[72px] min-[1232px]:leading-[115.2px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-12 w-full max-w-[1006px] px-3 sm:px-4 md:mb-20 md:px-8 lg:mb-[120px] lg:px-[92px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display flex flex-col items-center gap-0 text-center text-[clamp(1.75rem,6.5vw,4.5rem)] font-normal uppercase leading-[1.12] sm:leading-[1.15] lg:text-[72px] lg:leading-[115.2px]", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "Design that means" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gradient-display block", children: "something" })
-        ] }) }) }),
+        ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           motion.p,
           {
-            className: "order-3 mx-auto w-full max-w-[642px] px-2 text-center text-[16px] leading-6 text-white min-[1232px]:absolute min-[1232px]:left-1/2 min-[1232px]:top-[401.61px] min-[1232px]:-translate-x-1/2 min-[1232px]:px-0",
+            className: "mb-8 w-full max-w-[642px] px-1 text-[16px] leading-6 text-white md:mb-10 lg:mb-12",
             initial: reduce ? false : { opacity: 0, y: 12 },
             whileInView: { opacity: 1, y: 0 },
             viewport: { once: true, amount: 0.3 },
@@ -45,14 +45,14 @@ function LandingAbout() {
             children: "I'm a developer who enjoys the craft of interfaces and product details. I blend layout, interaction, and implementation so what ships is easy to use, easy to read in the codebase, and aligned with what the team is trying to achieve."
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "order-4 min-[1232px]:absolute min-[1232px]:left-[528.44px] min-[1232px]:top-[473.61px] min-[1232px]:pt-[40px]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex w-full justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "a",
           {
             href: "#about",
-            className: "relative inline-flex items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-[25px] py-[17px] text-[16px] leading-[19.2px] uppercase text-[#04070a] shadow-pill-inset",
+            className: "relative inline-flex items-center gap-3 rounded-full border border-dashed border-[rgba(4,7,10,0.4)] bg-white px-5 py-3.5 text-[15px] leading-[19.2px] uppercase text-[#04070a] shadow-pill-inset sm:px-[25px] sm:py-[17px] sm:text-[16px]",
             children: [
               "More about me",
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-6 shrink-0", strokeWidth: 1.75, "aria-hidden": true })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowUpRight, { className: "size-5 shrink-0 sm:size-6", strokeWidth: 1.75, "aria-hidden": true })
             ]
           }
         ) })
