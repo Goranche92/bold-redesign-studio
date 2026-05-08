@@ -1,0 +1,7 @@
+/* Optional WHTML companion: tighten page canvas to match Figma (#04070A) */
+body {
+  background-color: #04070a !important;
+}
+.pf-root {
+  background-color: #04070a;
+}
