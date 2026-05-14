@@ -2,8 +2,13 @@
 .pf-svc-wrap {
   width: 100%;
   background: #04070a;
+  /* Stack above sticky “Selected work” headline (often z-10) so #services scrolls over, not under */
+  position: relative;
+  z-index: 30;
+  isolation: isolate;
 }
 .pf-svc {
+  position: relative;
   max-width: 1232px;
   margin: 0 auto;
   padding: 96px 24px 32px;

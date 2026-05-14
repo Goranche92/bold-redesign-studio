@@ -24,7 +24,7 @@ export function LandingServices() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="services" className="mx-auto w-full max-w-[1232px] px-6 pt-24 pb-8 md:px-6 lg:pt-40">
+    <section id="services" className="relative z-20 mx-auto w-full max-w-[1232px] px-6 pt-24 pb-8 md:px-6 lg:pt-40">
       <div className="mb-8 flex items-center gap-2">
         <span className="size-3 shrink-0 rounded-full bg-[#f00862]" aria-hidden />
         <span className="text-[15.3px] leading-[19.2px] uppercase">What I offer</span>

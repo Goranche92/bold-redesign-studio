@@ -13,7 +13,7 @@ const shots = [
 export function LandingOurWorks() {
   return (
     <section id="works" className="mx-auto flex w-full max-w-[1280px] flex-col px-6 pt-20 pb-10 md:px-6">
-      <div className="sticky top-0 z-10 flex w-full flex-col items-center bg-[#04070a]/80 pb-8 backdrop-blur-md">
+      <div className="sticky top-0 z-[1] flex w-full flex-col items-center bg-[#04070a]/80 pb-8 backdrop-blur-md">
         <div className="mb-2 flex items-center gap-2">
           <span className="size-3 shrink-0 rounded-full bg-[#f00862]" aria-hidden />
           <span className="text-[15.3px] leading-[19.2px] uppercase">Selected work</span>
